@@ -1,0 +1,583 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第三章 布局Layout · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter4.html" />
+    
+    
+    <link rel="prev" href="chapter2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    第一章 Android与Android Studio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                    第二章 Activity的基本用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                    第三章 布局Layout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                    第四章  fragment碎片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    第五章 广播和广播接收器BroadCast Receiver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                    第六章 持久化存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第三章 布局Layout</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x7B2C;&#x4E09;&#x7AE0;-&#x5E03;&#x5C40;">&#x7B2C;&#x4E09;&#x7AE0; &#x5E03;&#x5C40;</h2>
+<h3 id="android-&#x63A7;&#x4EF6;&#x53EF;&#x89C1;&#x5C5E;&#x6027;">android &#x63A7;&#x4EF6;&#x53EF;&#x89C1;&#x5C5E;&#x6027;</h3>
+<ul>
+<li>visible: &#x53EF;&#x89C1;&#x4E14;&#x5360;&#x636E;&#x7A7A;&#x95F4;</li>
+<li>invisible&#xFF1A;&#x4E0D;&#x53EF;&#x89C1;&#x4F46;&#x662F;&#x5360;&#x636E;&#x7A7A;&#x95F4;</li>
+<li>gone &#xFF1A;&#x4E0D;&#x53EF;&#x89C1;&#x4E14;&#x4E0D;&#x5360;&#x636E;&#x7A7A;&#x95F4;</li>
+</ul>
+<p>&#x4F7F;&#x7528;<code>setVisibility()</code>&#x65B9;&#x6CD5;&#x8BBE;&#x7F6E;&#xFF0C; &#x53EF;&#x4EE5;&#x4F20;&#x5165;</p>
+<p><code>View.VISIBLE</code></p>
+<p> <code>View.INVIDIBLE</code> </p>
+<p> <code>View.GONE</code>&#x4E09;&#x79CD;&#x503C;</p>
+<h3 id="viewgroup">ViewGroup</h3>
+<p>&#x7279;&#x6B8A;&#x7684;View,&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x5F88;&#x591A;&#x5B50;View&#x548C;ViewGroup</p>
+<h4 id="&#x7EBF;&#x6027;&#x5E03;&#x5C40;linearlayout">&#x7EBF;&#x6027;&#x5E03;&#x5C40;LinearLayout</h4>
+<ol>
+<li><p><code>android:orientation</code> &#x5E03;&#x5C40;&#x7684;&#x65B9;&#x5411; &#x53EF;&#x9009;:horizontal vertical</p>
+</li>
+<li><p><code>android:layout_gravity</code>: &#x63A7;&#x4EF6;&#x5728;&#x5E03;&#x5C40;&#x4E2D;&#x7684;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;</p>
+<p><code>android:gravity</code>&#x6587;&#x5B57;&#x5728;&#x63A7;&#x4EF6;&#x4E2D;&#x7684;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;</p>
+</li>
+<li><p><code>android:layout_weigth</code></p>
+</li>
+</ol>
+<h4 id="&#x76F8;&#x5BF9;&#x5E03;&#x5C40;relativelayout">&#x76F8;&#x5BF9;&#x5E03;&#x5C40;RelativeLayout</h4>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x5F97;&#x63A7;&#x4EF6;&#x51FA;&#x73B0;&#x5728;&#x5E03;&#x5C40;&#x7684;&#x4EFB;&#x4F55;&#x4F4D;&#x7F6E;</p>
+<ul>
+<li><p>&#x76F8;&#x5BF9;&#x4E8E;&#x7236;&#x7EC4;&#x4EF6;&#x5B9A;&#x4F4D;<code>layout_alignParent___ =&quot;true&quot;</code></p>
+</li>
+<li><p>&#x76F8;&#x5BF9;&#x4E8E;&#x5176;&#x4ED6;&#x63A7;&#x4EF6;&#x5E03;&#x5C40; <code>layout_above = &quot;@id/xxx&quot;</code></p>
+<p><code>layout_to___Of = &quot;@id/xxx&quot;</code></p>
+<p>&#x5F15;&#x7528;&#x5176;&#x4ED6;&#x63A7;&#x4EF6;&#x7684;id</p>
+</li>
+</ul>
+<h4 id="&#x5E27;&#x5E03;&#x5C40;framelayout">&#x5E27;&#x5E03;&#x5C40;FrameLayout</h4>
+<p>&#x9ED8;&#x8BA4;&#x6240;&#x6709;&#x63A7;&#x4EF6;&#x5728;&#x5DE6;&#x4E0A;&#x89D2;</p>
+<p><code>android:layout_gravity</code>: &#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;  &#x5BF9;&#x9F50;&#x7684;&#x65B9;&#x5411;</p>
+<h3 id="&#x5F15;&#x5165;&#x5E03;&#x5C40;">&#x5F15;&#x5165;&#x5E03;&#x5C40;</h3>
+<p>&#x5728;&#x5176;&#x4ED6;&#x5E03;&#x5C40;&#x4E2D;&#x5F15;&#x5165;&#x5DF2;&#x7ECF;&#x5199;&#x597D;&#x7684;&#x5E03;&#x5C40;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">layout</span> = &quot;@<span class="hljs-attr">layout</span>/<span class="hljs-attr">xxx</span>&quot;&gt;</span>
+</code></pre>
+<p>&#x9690;&#x85CF;&#x7CFB;&#x7EDF;&#x81EA;&#x5E26;&#x7684;&#x6807;&#x9898;&#x680F;</p>
+<pre><code class="lang-java">ActionBar ab = getSupportActionBar();
+<span class="hljs-keyword">if</span>(ab != <span class="hljs-keyword">null</span>){
+    ab.hide();
+}
+</code></pre>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x63A7;&#x4EF6;">&#x81EA;&#x5B9A;&#x4E49;&#x63A7;&#x4EF6;</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NewLayout</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">LinearLayout</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">NewLayout</span><span class="hljs-params">(Context context, AttributeSet attrs)</span></span>{
+        <span class="hljs-keyword">super</span>(context, attrs);
+        <span class="hljs-comment">// &#x6DFB;&#x52A0;&#x65B0;&#x5E03;&#x5C40;</span>
+        LayoutInflater.from(context).inflate(R.layout.xxx, <span class="hljs-keyword">this</span>);
+        <span class="hljs-comment">// TODO &#x6DFB;&#x52A0;&#x6709;&#x5173;&#x52A8;&#x4F5C;</span>
+    }
+}
+</code></pre>
+<p><code>LayoutInflater.from(context)</code>&#x5F97;&#x5230;&#x4E00;&#x4E2A;<code>LayoutInflater</code>&#x5B9E;&#x4F8B;(&#x5E03;&#x5C40;&#x586B;&#x5145;&#x5668;)</p>
+<p>&#x8C03;&#x7528;inflate&#x65B9;&#x6CD5;&#x52A8;&#x6001;&#x52A0;&#x8F7D;&#x5E03;&#x5C40;, &#x7B2C;&#x4E00;&#x4E2A;&#x4E3A;&#x5E03;&#x5C40;&#x6587;&#x4EF6;id, &#x7B2C;&#x4E8C;&#x4E2A;&#x662F;&#x7236;&#x5E03;&#x5C40;</p>
+<p><strong>&#x53EF;&#x4EE5;&#x5728;&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#x4E2D;&#x76F4;&#x63A5;&#x4F7F;&#x7528;</strong><code>NewLayout</code></p>
+<p>&#x53E6;&#x5916;:</p>
+<p><strong>&#x83B7;&#x53D6;View&#x5BF9;&#x8C61;&#x6240;&#x5728;&#x6D3B;&#x52A8;&#x7684;&#x65B9;&#x6CD5;</strong></p>
+<pre><code class="lang-java">(Activity)getContext();
+</code></pre>
+<h3 id="listview">ListView</h3>
+<h4 id="&#x57FA;&#x672C;&#x7528;&#x6CD5;">&#x57FA;&#x672C;&#x7528;&#x6CD5;</h4>
+<ol>
+<li><p>&#x9884;&#x5148;&#x63D0;&#x4F9B;&#x6570;&#x636E; <code>String data[] = {&quot;A&quot;,&quot;B&quot;}</code></p>
+</li>
+<li><p>&#x5EFA;&#x7ACB;Adapter  (Context context, sub_item_layout, data)</p>
+</li>
+<li><p>&#x627E;&#x5230;listView&#x5B9E;&#x4F8B;</p>
+</li>
+<li><p><code>setAdapter()</code></p>
+<pre><code class="lang-java"><span class="hljs-comment">// 2</span>
+ArrayAdapter&lt;String&gt; adapter = <span class="hljs-keyword">new</span> Adapter&lt;String&gt;(MainActivity.<span class="hljs-keyword">this</span>,                                                   android.R.layout.simple_list_item_1,                                              data);
+<span class="hljs-comment">// 3</span>
+ListView lv =findViewById(xxx);
+<span class="hljs-comment">// 4</span>
+lv.setAdapter(adpter);
+</code></pre>
+</li>
+</ol>
+<h4 id="&#x5B9A;&#x5236;&#x754C;&#x9762;">&#x5B9A;&#x5236;&#x754C;&#x9762;</h4>
+<p>&#x6BCF;&#x4E2A;item_view &#x91CC;&#x6709;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x548C;&#x4E00;&#x884C;&#x6587;&#x5B57;</p>
+<ol>
+<li>&#x6570;&#x636E;&#x7C7B;</li>
+</ol>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Fruit</span></span>{
+    <span class="hljs-keyword">private</span> String name;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> picId;
+
+    Fruit(String name, picId){
+        <span class="hljs-keyword">this</span>.name = name;
+        <span class="hljs-keyword">this</span>.picId = picId;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> name;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getPicId</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> picId;
+    }
+}
+</code></pre>
+<ol>
+<li><p>&#x5B50;&#x7C7B;&#x5E03;&#x5C40; &#x7565;</p>
+</li>
+<li><p>&#x65B0;&#x5EFA;Adapter</p>
+<p><code>resId</code><strong>&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x5F53;&#x524D;&#x67D0;&#x4E00;&#x9879;&#x76EE;&#x5E03;&#x5C40;&#x6587;&#x4EF6;(&#x5185;&#x90E8;&#x5E03;&#x5C40;)</strong>&#x7684;id,</p>
+<p><code>getView()</code><strong>&#x6BCF;&#x4E2A;&#x5212;&#x5165;&#x5C4F;&#x5E55;&#x8303;&#x56F4;&#x7684;&#x5B50;&#x9879;&#x90FD;&#x4F1A;&#x88AB;&#x8C03;&#x7528;</strong>&#xFF0C;&#x5728;&#x6B64;&#x52A0;&#x8F7D;&#x5176;&#x5E03;&#x5C40;</p>
+<p><code>convertView</code><strong>&#x4E4B;&#x524D;&#x5DF2;&#x7ECF;&#x7F13;&#x5B58;&#x7684;&#x5E03;&#x5C40;</strong></p>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FruitAdapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ArrayAdapter</span>&lt;<span class="hljs-title">Fruit</span>&gt;</span>{
+    <span class="hljs-comment">// &#x5B50;&#x9879;&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#x7684;id</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> resId;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">FruitAdapter</span><span class="hljs-params">(Context context, <span class="hljs-keyword">int</span> textViewResourseId, List&lt;Fruit&gt; objects)</span></span>{
+        <span class="hljs-keyword">super</span>(context, textViewResourseId, objects);
+        <span class="hljs-keyword">this</span>.resid = textViewResourseId;
+    }
+
+    <span class="hljs-meta">@override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> View <span class="hljs-title">getView</span><span class="hljs-params">(<span class="hljs-keyword">int</span> position, View convertView, ViewGroup viewgroup)</span></span>{
+        Fruit fruit = getItem(position);
+     <span class="hljs-comment">// &#x4E3A;&#x8FD9;&#x4E2A;&#x5B50;&#x9879;&#x52A0;&#x8F7D;&#x5E03;&#x5C40;   </span>
+        View view = LayoutInflater.from(getContext()).inflate(resId,parent,<span class="hljs-keyword">false</span>);
+        ImageView imageview = view.getViewById(R.id.image);
+        TextView textview = view.getViewById(R.id.text);
+        imageview.setImageResource(fruit.getRPicId());
+        textview.setText(fruit.getName());
+        <span class="hljs-keyword">return</span> view;
+    }
+}
+</code></pre>
+</li>
+<li><p>&#x63BA;&#x5165;&#x6570;&#x636E;&#xFF08;MainActivity.java&#xFF09;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x521B;&#x5EFA;&#x6570;&#x636E;List</span>
+List&lt;Fruit&gt; fruitList = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
+<span class="hljs-comment">// </span>
+onCreate(){
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-comment">// &#x586B;&#x5145;List</span>
+    initFruit();
+    FruitAdapter fruitadpater = <span class="hljs-keyword">new</span> FruitAdapter(MainActivity.<span class="hljs-keyword">this</span>, R.layout.xxx, fruitList);
+    ListView lv = findViewById(xxx);
+    lv.setAdapter(fruitadpater);
+}
+
+initFruit(){
+    Fruit firit_1 = <span class="hljs-keyword">new</span> Fruit(<span class="hljs-string">&quot;apple&quot;</span>, R.drawable.xxx);
+    fruitList.add(firit_1);
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+</li>
+</ol>
+<h4 id="&#x4F18;&#x5316;&#x4E4B;adapter&#x7684;&#x5185;&#x90E8;&#x7C7B;viewholder">&#x4F18;&#x5316;&#x4E4B;Adapter&#x7684;&#x5185;&#x90E8;&#x7C7B;ViewHolder</h4>
+<p><code>ViewHolder</code>&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x7F13;&#x5B58;&#x5B50;&#x9879;&#x5185;&#x90E8;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x514D;&#x5F97;&#x6BCF;&#x6B21;&#x52A0;&#x8F7D;&#x5B50;&#x9879;&#x90FD;&#x8981;&#x53BB;<code>findViewById()</code></p>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FruitAdapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ArrayAdapter</span>&lt;<span class="hljs-title">Fruit</span>&gt;</span>{
+    <span class="hljs-comment">// &#x5B50;&#x9879;&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#x7684;id</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> resId;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">FruitAdapter</span><span class="hljs-params">(Context context, <span class="hljs-keyword">int</span> textViewResourseId, List&lt;Fruit&gt; objects)</span></span>{
+        <span class="hljs-keyword">super</span>(context, textViewResourseId, objects);
+        <span class="hljs-keyword">this</span>.resid = textViewResourseId;
+    }
+
+    <span class="hljs-meta">@override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> View <span class="hljs-title">getView</span><span class="hljs-params">(<span class="hljs-keyword">int</span> position, View convertView, ViewGroup, viewgroup)</span></span>{
+        Fruit fruit = getItem(position);
+        View view ;
+
+         ViewHolder viewholder;
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x4E4B;&#x524D;&#x6CA1;&#x6709;&#x7F13;&#x5B58;&#x8FC7;&#x5E03;&#x5C40;</span>
+        <span class="hljs-keyword">if</span>(convertView == <span class="hljs-keyword">null</span>){
+            view = LayoutInflater.from(getContext()).inflate(resId,parent,<span class="hljs-keyword">false</span>);
+            viewHolder = <span class="hljs-keyword">new</span> ViewHolder();
+            viewholder.textview = view.getViewById(R.id.text);
+            viewholder.imageview = view.getViewById(R.id.image);
+            <span class="hljs-comment">// &#x5C06;ViewHolder&#x4FDD;&#x5B58;&#x5728;view&#x4E2D;</span>
+            view.saveTag(viewholder);
+        }
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x4E0D;&#x4E3A;&#x7A7A;&#xFF0C;&#x76F4;&#x63A5;&#x53D6;&#x6765;&#x7528;</span>
+        <span class="hljs-keyword">else</span>{
+            view = convertView&#xFF1B;
+            <span class="hljs-comment">// &#x91CD;&#x65B0;&#x83B7;&#x53D6;VIewholder</span>
+            viewholder = view.getTag();
+        }
+        viewholder.imageview.setImageResource(fruit.getRPicId());
+        viewholder.textview.setText(fruit.getName());
+        <span class="hljs-keyword">return</span> view;
+    }
+
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ViewHolder</span></span>{
+        <span class="hljs-comment">// &#x7F13;&#x5B58;&#x5B9E;&#x4F8B;</span>
+        TextView textview;
+        ImageView imageview;
+    }
+}
+</code></pre>
+<h3 id="recycleview-&#x66F4;&#x63A8;&#x8350;&#x7684;&#x6EDA;&#x52A8;&#x63A7;&#x4EF6;">RecycleView &#x66F4;&#x63A8;&#x8350;&#x7684;&#x6EDA;&#x52A8;&#x63A7;&#x4EF6;</h3>
+<p><code>ViewHolder</code>&#x5185;&#x90E8;&#x8981;&#x5B58;&#x653E;&#x5B50;&#x63A7;&#x4EF6;<strong>&#x5185;&#x63A7;&#x4EF6;&#x7684;&#x5B9E;&#x4F8B;</strong>&#xFF0C;&#x63A5;&#x6536;&#x4E00;&#x4E2A;View&#x5BF9;&#x8C61;&#xFF0C;&#x662F;<strong>&#x5B50;&#x5E03;&#x5C40;&#x7684;&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#x5B9E;&#x4F8B;</strong></p>
+<p><code>FruitAdapter</code>&#x6784;&#x9020;&#x51FD;&#x6570;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x7684;&#x4F20;&#x5165;</p>
+<p><code>onCreateViewHolder</code>&#x4F5C;&#x7528;&#x662F;&#x521B;&#x5EFA;<code>ViewHolder</code>&#x5B9E;&#x4F8B;&#x5E76;&#x8FD4;&#x56DE;</p>
+<p><code>onBindViewHolder</code>&#x5BF9;&#x5B50;&#x9879;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x8D4B;&#x503C;, &#x6839;&#x636E;<code>position</code>, &#x5728;&#x6BCF;&#x4E2A;&#x5B50;&#x9879;&#x6EDA;&#x52A8;&#x5230;&#x5C4F;&#x5E55;&#x5185;&#x65F6;&#x6267;&#x884C;</p>
+<p><code>getItemCount</code>&#x7B80;&#x5355;&#x8FD4;&#x56DE;&#x5B50;&#x9879;&#x6570;&#x76EE;&#x5373;&#x53EF;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FruitAdapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">RecyclerView</span>.<span class="hljs-title">Adapter</span>&lt;<span class="hljs-title">FruitAdapter</span>.<span class="hljs-title">ViewHolder</span>&gt;</span>{
+    <span class="hljs-comment">// &#x6570;&#x636E;&#x90E8;&#x5206;</span>
+    <span class="hljs-keyword">private</span> List&lt;Fruit&gt; mFruitLists;
+
+    <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ViewHolder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">RecyclerView</span>.<span class="hljs-title">ViewHolder</span></span>{
+        IamegeView fruitImg;
+        TextView fruirName;
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ViewHolder</span><span class="hljs-params">(View view)</span></span>{
+            <span class="hljs-keyword">super</span>(view);
+            fruitImg = (ImageView)view.findViewById(R.id.xxx);
+            fruirName = (TextView)view.findViewById(R.id.yyy);
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">FruitAdapter</span><span class="hljs-params">(List&lt;Fruit&gt; fruitList)</span></span>{
+        <span class="hljs-keyword">this</span>.mFruitLists = fruitList;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> ViewHolder <span class="hljs-title">onCreateViewHolder</span><span class="hljs-params">(ViewGroup parent, <span class="hljs-keyword">int</span> ViewType)</span></span>{
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.zzz, parent, <span class="hljs-keyword">false</span>);
+        ViewHolder holder = <span class="hljs-keyword">new</span> ViewHolder(view);
+        <span class="hljs-keyword">return</span> holder;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onBindViewHolder</span><span class="hljs-params">(ViewHolder holder, <span class="hljs-keyword">int</span> position)</span></span>{
+        Fruit fruit = mFruitLists.get(position);
+        holder.fruitImg.setImageResource(fruit.getPicId());
+        holder.fruirName.setText(fruit.getName());
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getItemCount</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> mFruitLists.size();
+    }
+
+}
+</code></pre>
+<p>MainActivity.java</p>
+<p><code>LayoutManager</code>&#x7528;&#x4E8E;&#x6307;&#x5B9A;RecyclerView&#x7684;&#x5E03;&#x5C40;&#x65B9;&#x5F0F;, <code>LinearLayoutManager</code>&#x6307;&#x7684;&#x662F;&#x7EBF;&#x6027;&#x5E03;&#x5C40;, &#x9ED8;&#x8BA4;&#x7EB5;&#x5411;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// onCreate()&#x5185;</span>
+initFruit();
+RecyclerView recyclerview = (RecyclerView)findViewById(R.id.aaa);
+<span class="hljs-comment">//</span>
+LinearLayoutManager layoutManager = <span class="hljs-keyword">new</span> LinearLayoutManager(<span class="hljs-keyword">this</span>);
+recycelerView.setLayoutManager(layoutManager);
+<span class="hljs-comment">//</span>
+FruitAdapter fa = <span class="hljs-keyword">new</span> FruitAdapter(fruitList);
+recyclerview.setAdapter(fa);
+</code></pre>
+<p>&#x6539;&#x4E3A;&#x6A2A;&#x5411;&#x6392;&#x5217;</p>
+<pre><code>layoutManager.setOrientation(LayoutManager.HONRIZONTAL);
+</code></pre><ul>
+<li><p>&#x5BF9;&#x4E8E;&#x6709;&#x591A;&#x79CD;&#x6837;&#x5F0F;&#x7684;&#x63A7;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x58F0;&#x660E;&#x591A;&#x79CD;&#x5E03;&#x5C40;&#xFF0C;<strong>&#x6839;&#x636E;&#x9700;&#x8981;&#x66F4;&#x6539;&#x5404;&#x4E2A;&#x63A7;&#x4EF6;&#x7684;&#x53EF;&#x89C1;&#x6027;</strong>&#xFF0C;&#x4F46;&#x4ECD;&#x7136;&#x8981;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x63A7;&#x4EF6;&#x7684;&#x5B9E;&#x4F8B;&#x3002;&#x5B9E;&#x73B0;(Vue&#x4E2D; v-if&#x6761;&#x4EF6;&#x7F16;&#x8BD1;)&#x7684;&#x6548;&#x679C;</p>
+</li>
+<li><p>&#x5F53;&#x6570;&#x636E;&#x6E32;&#x67D3;&#x540E;&#x8FFD;&#x52A0;&#x6570;&#x636E;&#xFF08;&#x901A;&#x5E38;&#x662F;&#x5411;&#x4E00;&#x4E2A;List&#x8FFD;&#x52A0;&#x6570;&#x636E;&#x65F6;&#xFF09;&#xFF0C;&#x9700;&#x8981;&#x5411;adapter<strong>&#x58F0;&#x660E;&#x8FFD;&#x52A0;, &#x9700;&#x8981;&#x5237;&#x65B0;&#x5E03;&#x5C40;</strong></p>
+<p>&#x53C2;&#x6570;&#xFF1A;&#x53D8;&#x66F4;&#x4E4B;&#x540E;&#x7684;&#x957F;&#x5EA6;int</p>
+<pre><code class="lang-java">adapter.notifyItemInserted(msgList.size());
+</code></pre>
+<p>&#x6709;&#x9700;&#x8981;&#x53EF;&#x4EE5;&#x4F7F;&#x5176;&#x6EDA;&#x5230;&#x6700;&#x540E; </p>
+<p>&#x53C2;&#x6570;&#xFF1A;&#x4F4D;&#x7F6E;int</p>
+<pre><code class="lang-java"><span class="hljs-comment">// msgRecyclerView&#x662F;RecyclerView&#x7684;&#x5B9E;&#x4F8B;</span>
+msgRecyclerView&#x3002;srcollToPosition(msgList.size() -<span class="hljs-number">1</span> )
+</code></pre>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter2.html" class="navigation navigation-prev " aria-label="Previous page: 第二章 Activity的基本用法">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter4.html" class="navigation navigation-next " aria-label="Next page: 第四章  fragment碎片">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第三章 布局Layout","level":"1.4","depth":1,"next":{"title":"第四章  fragment碎片","level":"1.5","depth":1,"path":"chapter4.md","ref":"./chapter4.md","articles":[]},"previous":{"title":"第二章 Activity的基本用法","level":"1.3","depth":1,"path":"chapter2.md","ref":"./chapter2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter3.md","mtime":"2020-04-16T03:22:07.649Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-16T03:45:57.110Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
