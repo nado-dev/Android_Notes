@@ -17,15 +17,27 @@
     
             
                 
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-links/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
         
@@ -223,7 +235,46 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x7B2C;&#x516D;&#x7AE0;-&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;">&#x7B2C;&#x516D;&#x7AE0; &#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;</h2>
+                                <!-- toc -->
+<ul>
+<li><a href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%8C%81%E4%B9%85%E5%8C%96%E5%AD%98%E5%82%A8">&#x7B2C;&#x516D;&#x7AE0; &#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;</a><ul>
+<li><a href="#%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8">&#x6587;&#x4EF6;&#x5B58;&#x50A8;</a><ul>
+<li><a href="#%E5%86%99">&#x5199;</a></li>
+<li><a href="#%E8%AF%BB">&#x8BFB;</a></li>
+</ul>
+</li>
+<li><a href="#sharedpreference%E5%AD%98%E5%82%A8">SharedPreference&#x5B58;&#x50A8;</a><ul>
+<li><a href="#%E8%8E%B7%E5%8F%96sharedpreference%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95">&#x83B7;&#x53D6;SharedPreference&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;</a></li>
+<li><a href="#%E5%86%99">&#x5199;</a></li>
+<li><a href="#%E8%AF%BB">&#x8BFB;</a></li>
+</ul>
+</li>
+<li><a href="#sqlite%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%98%E5%82%A8%E6%8A%80%E6%9C%AF">SQLite&#x6570;&#x636E;&#x5E93;&#x5B58;&#x50A8;&#x6280;&#x672F;</a><ul>
+<li><a href="#oncreate(">onCreate()&#x5EFA;&#x8868;</a>%E5%BB%BA%E8%A1%A8)</li>
+<li><a href="#adb%E5%B7%A5%E5%85%B7">adb&#x5DE5;&#x5177;</a>
+~ <a href="#sqlite3-%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93">sqlite3 &#x547D;&#x4EE4;&#x603B;&#x7ED3;</a></li>
+<li><a href="#onupgrade(">onUpgrade()&#x5347;&#x7EA7;&#x8868;</a>%E5%8D%87%E7%BA%A7%E8%A1%A8)</li>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE">&#x6DFB;&#x52A0;&#x6570;&#x636E;</a></li>
+<li><a href="#%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE">&#x66F4;&#x65B0;&#x6570;&#x636E;</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE">&#x5220;&#x9664;&#x6570;&#x636E;</a></li>
+<li><a href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE">&#x67E5;&#x8BE2;&#x6570;&#x636E;</a></li>
+</ul>
+</li>
+<li><a href="#litepal%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93">LitePal&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;</a><ul>
+<li><a href="#%E9%85%8D%E7%BD%AElitepal">&#x914D;&#x7F6E;LitePal</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BA%E8%A1%A8">&#x521B;&#x5EFA;&#x8868;</a></li>
+<li><a href="#%E6%9B%B4%E6%96%B0%E8%A1%A8">&#x66F4;&#x65B0;&#x8868;</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE">&#x6DFB;&#x52A0;&#x6570;&#x636E;</a></li>
+<li><a href="#%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE">&#x66F4;&#x65B0;&#x6570;&#x636E;</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE">&#x5220;&#x9664;&#x6570;&#x636E;</a></li>
+<li><a href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE">&#x67E5;&#x8BE2;&#x6570;&#x636E;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<h2 id="&#x7B2C;&#x516D;&#x7AE0;-&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;">&#x7B2C;&#x516D;&#x7AE0; &#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;</h2>
 <p>&#x6587;&#x4EF6;&#x5B58;&#x50A8;, SharedPreference, &#x6570;&#x636E;&#x5E93;</p>
 <h3 id="&#x6587;&#x4EF6;&#x5B58;&#x50A8;">&#x6587;&#x4EF6;&#x5B58;&#x50A8;</h3>
 <p>&#x4E0D;&#x63A8;&#x8350;, &#x9002;&#x7528;&#x4E8E;&#x7B80;&#x5355;&#x65E0;&#x683C;&#x5F0F;&#x6587;&#x672C;</p>
@@ -302,7 +353,7 @@
 <p>&#x200B;    &#x4F1A;&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x6D3B;&#x52A8;&#x7C7B;&#x540D;&#x5F53;&#x4F5C;&#x6587;&#x4EF6;&#x540D;</p>
 </li>
 <li><p>PreferenceManager&#x7C7B;&#x4E2D;&#x7684;<code>getDefaultSharedPreferences()</code>&#x65B9;&#x6CD5;</p>
-<p>&#x63A5;&#x6536;&#x4E00;&#x4E2A;context&#x53C2;&#x6570; &#x5305;&#x540D;&#x5F53;&#x4F5C;&#x6587;&#x4EF6;&#x540D;</p>
+<p>&#x63A5;&#x6536;&#x4E00;&#x4E2A;context&#x53C2;&#x6570; <strong>&#x5305;&#x540D;&#x5F53;&#x4F5C;&#x6587;&#x4EF6;&#x540D;</strong></p>
 </li>
 </ol>
 <h4 id="&#x5199;">&#x5199;</h4>
@@ -329,7 +380,373 @@
     <span class="hljs-keyword">boolean</span> bool = pref.getBoolean(<span class="hljs-string">&quot;key_boolean&quot;</span>, <span class="hljs-keyword">false</span>);
 }
 </code></pre>
+<ul>
+<li><code>clear()</code>&#x65B9;&#x6CD5;&#xFF0C;&#x6E05;&#x9664;&#x6587;&#x4EF6;&#x5185;&#x5BB9;</li>
+</ul>
+<h3 id="sqlite&#x6570;&#x636E;&#x5E93;&#x5B58;&#x50A8;&#x6280;&#x672F;">SQLite&#x6570;&#x636E;&#x5E93;&#x5B58;&#x50A8;&#x6280;&#x672F;</h3>
+<p>&#x62BD;&#x8C61;&#x7C7B;<code>SQLiteOpenHelper</code></p>
+<ul>
+<li><p>&#x9700;&#x8981;&#x81EA;&#x884C;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x5E2E;&#x52A9;&#x7C7B;, &#x91CD;&#x5199;<code>onCreate()</code>&#x548C;<code>onUpgrade()</code>&#x5B9E;&#x73B0;&#x521B;&#x5EFA; &#x66F4;&#x65B0;&#x6570;&#x636E;&#x5E93;&#x7684;&#x903B;&#x8F91;</p>
+</li>
+<li><p>&#x4E24;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;<code>getReadableDatabase()</code>&#x548C;<code>getWritableDatabase()</code></p>
+<p>&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x6216;&#x8005;&#x6253;&#x5F00;&#x6570;&#x636E;&#x5E93;, &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x5BF9;&#x6570;&#x636E;&#x5E93;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x7684;&#x5BF9;&#x8C61;</p>
+</li>
+<li><p>&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x56DB;&#x4E2A;&#x53C2;&#x6570; context,  &#x6570;&#x636E;&#x5E93;&#x540D;, &#x81EA;&#x5B9A;&#x4E49;&#x7684;Cursor(null), &#x6570;&#x636E;&#x5E93;&#x7248;&#x672C;&#x53F7;</p>
+</li>
+</ul>
+<h4 id="oncreate&#x5EFA;&#x8868;">onCreate()&#x5EFA;&#x8868;</h4>
+<p>MainActivity</p>
+<pre><code class="lang-java">  btn_createTable = findViewById(R.id.create_table);
+        MyDataBaseHelper dbHelper = <span class="hljs-keyword">new</span> MyDataBaseHelper(<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;BookStore.db&quot;</span>, <span class="hljs-keyword">null</span>, <span class="hljs-number">1</span>);
+        btn_createTable.setOnClickListener(<span class="hljs-keyword">new</span> View.OnClickListener() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View v)</span> </span>{
+                dbHelper.getWritableDatabase();
+            }
+        });
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyDataBaseHelper</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">SQLiteOpenHelper</span> </span>{
 
+    <span class="hljs-comment">// &#x5EFA;&#x8868;SQL&#x8BED;&#x53E5;</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String CREATE_BOOK = <span class="hljs-string">&quot;create table Book(&quot;</span>
+            + <span class="hljs-string">&quot;id integer primary key autoincrement,&quot;</span>
+            + <span class="hljs-string">&quot;author text,&quot;</span>
+            + <span class="hljs-string">&quot;price real,&quot;</span>
+            + <span class="hljs-string">&quot;pages integer,&quot;</span>
+            + <span class="hljs-string">&quot;name text)&quot;</span>;
+
+    <span class="hljs-comment">// context&#x526F;&#x672C;&#x4FBF;&#x4E8E;&#x5176;&#x4ED6;&#x5730;&#x65B9;&#x5229;&#x7528;</span>
+    <span class="hljs-keyword">private</span> Context mContext;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyDataBaseHelper</span><span class="hljs-params">(@Nullable Context context
+            , @Nullable String name
+            , @Nullable SQLiteDatabase.CursorFactory factory
+            , <span class="hljs-keyword">int</span> version)</span>
+    </span>{
+        <span class="hljs-keyword">super</span>(context, name, factory, version);
+        mContext = context;
+    }
+
+    <span class="hljs-comment">// &#x521B;&#x5EFA;&#x903B;&#x8F91;&#x6709;&#x5173;&#x64CD;&#x4F5C;</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(SQLiteDatabase db)</span> </span>{
+        <span class="hljs-comment">// execSQL()&#x6267;&#x884C;SQL&#x8BED;&#x53E5;</span>
+        db.execSQL(CREATE_BOOK);
+        Toast.makeText(mContext, <span class="hljs-string">&quot;Created!&quot;</span>, Toast.LENGTH_SHORT).show();
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onUpgrade</span><span class="hljs-params">(SQLiteDatabase db, <span class="hljs-keyword">int</span> oldVersion, <span class="hljs-keyword">int</span> newVersion)</span> </span>{
+
+    }
+}
+</code></pre>
+<h4 id="adb&#x5DE5;&#x5177;">adb&#x5DE5;&#x5177;</h4>
+<ol>
+<li>&#x5C06;<code>AndroidSDK\platform-tools</code>&#x6DFB;&#x52A0;&#x8FDB;&#x5165;&#x73AF;&#x5883;&#x53D8;&#x91CF;</li>
+<li>cmd <code>adb shell</code>&#x8FDB;&#x5165;&#x5230;&#x8BBE;&#x5907;&#x7684;&#x63A7;&#x5236;&#x53F0;</li>
+</ol>
+<p>&#x8FDE;&#x63A5;&#x5230;mumu <code>adb connect 127.0.0.1:7555</code></p>
+<p>&#x6CE8;&#x610F;:mumu&#x6A21;&#x62DF;&#x5668;&#x5E76;&#x65E0;sqlite3&#x6587;&#x4EF6;, &#x5BFC;&#x5165;&#x65B9;&#x6CD5;&#x89C1;<a href="https://blog.csdn.net/sjtuzhou/article/details/89365178" target="_blank">Android &#x6A21;&#x62DF;&#x5668; sqlite3&#x547D;&#x4EE4; not found &#x89E3;&#x51B3;&#x529E;&#x6CD5;</a></p>
+<h5 id="sqlite3-&#x547D;&#x4EE4;&#x603B;&#x7ED3;">sqlite3 &#x547D;&#x4EE4;&#x603B;&#x7ED3;</h5>
+<pre><code class="lang-shell">sqlite3 [DatabaseName] #&#x8FDB;&#x5165;&#x6570;&#x636E;&#x5E93;
+.table #&#x67E5;&#x770B;&#x8868;
+.schema #&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;&#x5EFA;&#x7ACB;&#x8BED;&#x53E5;
+</code></pre>
+<h4 id="onupgrade&#x5347;&#x7EA7;&#x8868;">onUpgrade()&#x5347;&#x7EA7;&#x8868;</h4>
+<p>&#x4E00;&#x822C;&#x5728;&#x589E;&#x52A0;&#x65B0;&#x8868;&#x65F6;&#x7528;&#x5230;</p>
+<p><code>onUpgrade()</code>&#x5728;<code>SQLOpenHelper</code>()&#x4F20;&#x5165;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x7B2C;&#x56DB;&#x4E2A;<strong>&#x53C2;&#x6570;&#x7248;&#x672C;&#x53F7;&#x6BD4;&#x4E4B;&#x524D;&#x7684;&#x5927;</strong>&#x65F6;&#x6267;&#x884C;</p>
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onUpgrade</span><span class="hljs-params">(SQLiteDatabase db, <span class="hljs-keyword">int</span> oldVersion, <span class="hljs-keyword">int</span> newVersion)</span> </span>{
+        db.execSQL(<span class="hljs-string">&quot;drop table if exists Book&quot;</span>);
+        db.execSQL(<span class="hljs-string">&quot;drop table if exists Category&quot;</span>);
+        onCreate(db);
+    }
+</code></pre>
+<h4 id="&#x6DFB;&#x52A0;&#x6570;&#x636E;">&#x6DFB;&#x52A0;&#x6570;&#x636E;</h4>
+<p><code>getWritableDatabase()</code>&#x548C;<code>getReadableDatabase()</code>&#x8FD4;&#x56DE;SQLiteDatabase&#x5BF9;&#x8C61;, &#x8BE5;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5730;&#x8FDB;&#x884C;CRUD&#x64CD;&#x4F5C;</p>
+<p>&#x6DFB;&#x52A0;&#x6570;&#x636E;&#x4F7F;&#x7528;<code>insert</code>&#x65B9;&#x6CD5;</p>
+<ul>
+<li>&#x53C2;&#x6570;1: &#x8868;&#x540D;String</li>
+<li>&#x53C2;&#x6570;2: &#x6307;&#x5B9A;&#x5728;&#x672A;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E3A;&#x67D0;&#x4E9B;&#x53EF;&#x4E3A;&#x7A7A;&#x7684;&#x54A7;&#x81EA;&#x52A8;&#x8D4B;&#x503C;&#x4E3A;&#x7A7A; &#x4E00;&#x822C;&#x4F20;&#x5165;NULL&#x5373;&#x53EF;</li>
+<li>&#x53C2;&#x6570;3: &#x4E00;&#x4E2A;<code>ContentValues</code>&#x5BF9;&#x8C61;, &#x901A;&#x8FC7;<code>put</code>&#x65B9;&#x6CD5;&#x5411;&#x5176;&#x4E2D;&#x586B;&#x5165;&#x503C;, &#x5B8C;&#x6210;&#x4E00;&#x4E2A;&#x5143;&#x7EC4; (&#x8BB0;&#x5F55;)</li>
+</ul>
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View v)</span> </span>{
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                ContentValues values = <span class="hljs-keyword">new</span> ContentValues();
+                values.put(<span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;nmsl&quot;</span>);
+                values.put(<span class="hljs-string">&quot;author&quot;</span>, <span class="hljs-string">&quot;sunxiaochuang&quot;</span>);
+                values.put(<span class="hljs-string">&quot;pages&quot;</span>, <span class="hljs-number">12</span>);
+                values.put(<span class="hljs-string">&quot;price&quot;</span>, <span class="hljs-number">6324</span>);
+
+                <span class="hljs-keyword">long</span> result =db.insert(<span class="hljs-string">&quot;Book&quot;</span>,<span class="hljs-keyword">null</span>,values);
+                <span class="hljs-keyword">if</span> (result &gt; <span class="hljs-number">0</span>){
+                   showSucceed();<span class="hljs-comment">//showToast</span>
+                }
+            }
+</code></pre>
+<h4 id="&#x66F4;&#x65B0;&#x6570;&#x636E;">&#x66F4;&#x65B0;&#x6570;&#x636E;</h4>
+<p><code>update()</code>&#x65B9;&#x6CD5;</p>
+<ul>
+<li><p>&#x53C2;&#x6570;1: &#x8868;&#x540D;String</p>
+</li>
+<li><p>&#x53C2;&#x6570;2: &#x4E00;&#x4E2A;<code>ContentValues</code>&#x5BF9;&#x8C61;, &#x901A;&#x8FC7;<code>put</code>&#x65B9;&#x6CD5;&#x5411;&#x5176;&#x4E2D;&#x586B;&#x5165;&#x503C;, &#x66F4;&#x65B0;&#x7684;&#x90E8;&#x5206;</p>
+</li>
+<li><p>&#x53C2;&#x6570;3: <code>where</code>&#x8BED;&#x53E5;  &#x82E5;&#x6761;&#x4EF6;&#x586B;&#x5165;<code>?</code>, &#x610F;&#x4E3A;&#x505A;&#x5360;&#x4F4D;&#x7B26;, &#x5177;&#x4F53;&#x6761;&#x4EF6;&#x89C1;&#x53C2;&#x6570;4</p>
+<p><code>name=?</code></p>
+</li>
+<li><p>&#x53C2;&#x6570;4: &#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;,&#x6307;&#x5B9A;&#x6BCF;&#x4E2A;&#x5360;&#x4F4D;&#x7B26;&#x7684;&#x5185;&#x5BB9;</p>
+<p><code>new String[]={&quot;BookName&quot;}</code></p>
+</li>
+</ul>
+<pre><code class="lang-java">btn_update.setOnClickListener(<span class="hljs-keyword">new</span> View.OnClickListener() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View v)</span> </span>{
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                ContentValues values = <span class="hljs-keyword">new</span> ContentValues();
+                values.put(<span class="hljs-string">&quot;price&quot;</span>, <span class="hljs-number">666</span>);
+
+                <span class="hljs-keyword">int</span> res = db.update(<span class="hljs-string">&quot;Book&quot;</span>, values, <span class="hljs-string">&quot;name=?&quot;</span>, <span class="hljs-keyword">new</span> String[]{<span class="hljs-string">&quot;nmsl&quot;</span>});
+                <span class="hljs-keyword">if</span> (res &gt; <span class="hljs-number">0</span>){
+                    showSucceed(<span class="hljs-keyword">true</span>);
+                }
+            }
+        });
+</code></pre>
+<h4 id="&#x5220;&#x9664;&#x6570;&#x636E;">&#x5220;&#x9664;&#x6570;&#x636E;</h4>
+<p><code>delete()</code>&#x65B9;&#x6CD5;</p>
+<ul>
+<li>&#x53C2;&#x6570;1: &#x8868;&#x540D;String</li>
+<li>&#x53C2;&#x6570;2: <code>where</code>&#x8BED;&#x53E5;  &#x82E5;&#x6761;&#x4EF6;&#x586B;&#x5165;<code>?</code>, &#x610F;&#x4E3A;&#x505A;&#x5360;&#x4F4D;&#x7B26;, &#x5177;&#x4F53;&#x6761;&#x4EF6;&#x89C1;&#x53C2;&#x6570;3</li>
+<li>&#x53C2;&#x6570;3: &#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;,&#x6307;&#x5B9A;&#x6BCF;&#x4E2A;&#x5360;&#x4F4D;&#x7B26;&#x7684;&#x5185;&#x5BB9;</li>
+</ul>
+<pre><code class="lang-java"> btn_delete.setOnClickListener(<span class="hljs-keyword">new</span> View.OnClickListener() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View v)</span> </span>{
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                db.delete(<span class="hljs-string">&quot;Book&quot;</span>, <span class="hljs-string">&quot;id&gt;?&quot;</span>, <span class="hljs-keyword">new</span> String[]{<span class="hljs-string">&quot;3&quot;</span>});
+            }
+        });
+</code></pre>
+<h4 id="&#x67E5;&#x8BE2;&#x6570;&#x636E;">&#x67E5;&#x8BE2;&#x6570;&#x636E;</h4>
+<p><code>query()</code>&#x65B9;&#x6CD5;</p>
+<p>query(table, columns, selection, selectionArgs, groupBy, having, orderBy, limit)&#x65B9;&#x6CD5;&#x5404;&#x53C2;&#x6570;&#x7684;&#x542B;&#x4E49;&#xFF1A;</p>
+<ul>
+<li>table&#xFF1A;&#x8868;&#x540D;&#x3002;&#x76F8;&#x5F53;&#x4E8E;select&#x8BED;&#x53E5;from&#x5173;&#x952E;&#x5B57;&#x540E;&#x9762;&#x7684;&#x90E8;&#x5206;&#x3002;&#x5982;&#x679C;&#x662F;&#x591A;&#x8868;&#x8054;&#x5408;&#x67E5;&#x8BE2;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x9017;&#x53F7;&#x5C06;&#x4E24;&#x4E2A;&#x8868;&#x540D;&#x5206;&#x5F00;&#x3002;</li>
+<li>columns&#xFF1A;&#x8981;&#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x7684;&#x5217;&#x540D;&#x3002;&#x76F8;&#x5F53;&#x4E8E;select&#x8BED;&#x53E5;select&#x5173;&#x952E;&#x5B57;&#x540E;&#x9762;&#x7684;&#x90E8;&#x5206;&#x3002;</li>
+<li>selection&#xFF1A;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x5B50;&#x53E5;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;select&#x8BED;&#x53E5;where&#x5173;&#x952E;&#x5B57;&#x540E;&#x9762;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x5728;&#x6761;&#x4EF6;&#x5B50;&#x53E5;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x5360;&#x4F4D;&#x7B26;&#x201C;?&#x201D;</li>
+<li>selectionArgs&#xFF1A;&#x5BF9;&#x5E94;&#x4E8E;selection&#x8BED;&#x53E5;&#x4E2D;&#x5360;&#x4F4D;&#x7B26;&#x7684;&#x503C;&#xFF0C;&#x503C;&#x5728;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x4E0E;&#x5360;&#x4F4D;&#x7B26;&#x5728;&#x8BED;&#x53E5;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x5FC5;&#x987B;&#x4E00;&#x81F4;&#xFF0C;&#x5426;&#x5219;&#x5C31;&#x4F1A;&#x6709;&#x5F02;&#x5E38;&#x3002;</li>
+<li>groupBy&#xFF1A;&#x76F8;&#x5F53;&#x4E8E;select&#x8BED;&#x53E5;group by&#x5173;&#x952E;&#x5B57;&#x540E;&#x9762;&#x7684;&#x90E8;&#x5206;</li>
+<li>having&#xFF1A;&#x76F8;&#x5F53;&#x4E8E;select&#x8BED;&#x53E5;having&#x5173;&#x952E;&#x5B57;&#x540E;&#x9762;&#x7684;&#x90E8;&#x5206;</li>
+<li>orderBy&#xFF1A;&#x76F8;&#x5F53;&#x4E8E;select&#x8BED;&#x53E5;order by&#x5173;&#x952E;&#x5B57;&#x540E;&#x9762;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x5982;&#xFF1A;personid desc, age asc;</li>
+<li>limit&#xFF1A;&#x6307;&#x5B9A;&#x504F;&#x79FB;&#x91CF;&#x548C;&#x83B7;&#x53D6;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;select&#x8BED;&#x53E5;limit&#x5173;&#x952E;&#x5B57;&#x540E;&#x9762;&#x7684;&#x90E8;&#x5206;&#x3002;</li>
+</ul>
+<p>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Cursor&#x5BF9;&#x8C61;, &#x6240;&#x6709;&#x6570;&#x636E;&#x4ECE;&#x6B64;&#x53D6;&#x51FA;</p>
+<p> <code>getString(int Colum)</code>  return Cursor</p>
+<p><code>getColumIndex(String ColumBName)</code>  return int(Colum Index)</p>
+<pre><code class="lang-java"> btn_update.setOnClickListener(<span class="hljs-keyword">new</span> View.OnClickListener() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View v)</span> </span>{
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                Cursor cursor = db.query(<span class="hljs-string">&quot;Book&quot;</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>);
+                <span class="hljs-keyword">if</span> (cursor.moveToFirst()){
+                    do{
+                        String name = cursor.getString(cursor.getColumnIndex(<span class="hljs-string">&quot;name&quot;</span>));
+                        Log.d(<span class="hljs-string">&quot;MainActivity&quot;</span>, name);
+                    }<span class="hljs-keyword">while</span> (cursor.moveToNext());
+                }
+                cursor.close();
+            }
+        });
+</code></pre>
+<p>&#x6CE8;&#x610F;&#x8981;&#x5173;&#x95ED;Cursor&#x5BF9;&#x8C61; </p>
+<p>cursor.close();</p>
+<hr>
+<p>&#x6CE8;&#x610F;:&#x4EE5;&#x4E0A;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x5747;&#x53EF;&#x4EE5;&#x5C5E;&#x4E8E;SQL&#x8BED;&#x53E5;&#x6267;&#x884C;</p>
+<p>&#x589E;&#x5220;&#x6539;: <code>db.execSQL(String SQLsequence, String[] whereArgs)</code></p>
+<p>&#x67E5;&#x627E;: <code>db.rawQuery(String SQLsequence)</code></p>
+<h3 id="litepal&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;">LitePal&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;</h3>
+<p>LitePal&#x4E00;&#x79CD;&#x662F;&#x4F7F;&#x7528;&#x5173;&#x7CFB;&#x6620;&#x5C04;&#x6A21;&#x5F0F;&#x7BA1;&#x7406;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5DE5;&#x5177;</p>
+<h4 id="&#x914D;&#x7F6E;litepal">&#x914D;&#x7F6E;LitePal</h4>
+<ol>
+<li><p>&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;</p>
+<pre><code> implementation &apos;org.litepal.android:core:1.4.1&apos;
+</code></pre></li>
+<li><p><code>app/src/main</code> -&gt; New -&gt; Diretory     &#x521B;&#x5EFA;<code>assets</code>&#x76EE;&#x5F55;</p>
+</li>
+<li><p><code>assets</code>  -&gt; new -&gt; File    &#x521B;&#x5EFA;<code>`litepal.xml</code></p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span> <span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">litepal</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dbname</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;BookStore&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">dbname</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">list</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">list</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">litepal</span>&gt;</span>
+</code></pre>
+<p>&#x5176;&#x4E2D;<code>dbname</code>&#x6307;&#x6570;&#x636E;&#x5E93;&#x540D;</p>
+<p>&#x200B;    <code>version</code>&#x6307;&#x7248;&#x672C;</p>
+<p><code>list</code>&#x6307;&#x6240;&#x6709;&#x6620;&#x5C04;&#x6A21;&#x578B;</p>
+</li>
+<li><p>AndroidManifest.xml</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">application</span>
+             <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;org.litepal.LitePalApplication&quot;</span>
+</span></code></pre>
+</li>
+</ol>
+<h4 id="&#x521B;&#x5EFA;&#x8868;">&#x521B;&#x5EFA;&#x8868;</h4>
+<ol>
+<li>&#x65B0;&#x5EFA;&#x5B9E;&#x4F53;&#x7C7B;Book_new &#x5B9A;&#x4E49;&#x5404;&#x79CD;&#x5C5E;&#x6027;(&#x5217;), getter&#x548C;setter</li>
+</ol>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Book_New</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">DataSupport</span></span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> id;
+    <span class="hljs-keyword">private</span> String author;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> price;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> pages;
+    <span class="hljs-keyword">private</span> String name;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getId</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> id;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setId</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span> </span>{
+        <span class="hljs-keyword">this</span>.id = id;
+    }
+
+   <span class="hljs-comment">//ect</span>
+}
+</code></pre>
+<ol>
+<li><p>&#x6DFB;&#x52A0;&#x6620;&#x5C04;&#x5173;&#x7CFB;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">list</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.example.sqlite_demo.Database.Book_New&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">list</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>&#x8C03;&#x7528;<code>getDatabase()</code></p>
+<pre><code class="lang-java"> btn_createDB.setOnClickListener(<span class="hljs-keyword">new</span> View.OnClickListener() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onClick</span><span class="hljs-params">(View v)</span> </span>{
+                LitePal.getDatabase();
+            }
+        });
+</code></pre>
+</li>
+</ol>
+<h4 id="&#x66F4;&#x65B0;&#x8868;">&#x66F4;&#x65B0;&#x8868;</h4>
+<p>&#x6BD4;&#x5982;&#x4FEE;&#x6539;&#x8868;&#x7684;&#x7ED3;&#x6784;(&#x5217;)</p>
+<ol>
+<li>&#x76F4;&#x63A5;&#x5728;&#x76F8;&#x5173;&#x7684;&#x5B9E;&#x4F53;&#x7C7B;&#x4E2D;&#x4FEE;&#x6539;&#x5C5E;&#x6027;</li>
+<li>&#x7248;&#x672C;&#x53F7;+1</li>
+</ol>
+<h4 id="&#x6DFB;&#x52A0;&#x6570;&#x636E;">&#x6DFB;&#x52A0;&#x6570;&#x636E;</h4>
+<ol>
+<li><p>&#x5EFA;&#x7ACB;&#x5B9E;&#x4F53;&#x7C7B;&#x5BF9;&#x8C61;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;set&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;&#x5C5E;&#x6027;</p>
+</li>
+<li><p>&#x8C03;&#x7528;<code>save</code>&#x65B9;&#x6CD5;&#x4FDD;&#x5B58;</p>
+<pre><code class="lang-java"> btn_addDB.setOnClickListener((v) -&gt; {
+            Book_New book= <span class="hljs-keyword">new</span> Book_New();
+            book.setAuthor(<span class="hljs-string">&quot;lilaoba&quot;</span>);
+            book.setName(<span class="hljs-string">&quot;chibaba&quot;</span>);
+            book.setPages(<span class="hljs-number">6324</span>);
+            book.setPrice(<span class="hljs-number">6325</span>);
+
+            book.save();
+        });
+</code></pre>
+</li>
+</ol>
+<h4 id="&#x66F4;&#x65B0;&#x6570;&#x636E;">&#x66F4;&#x65B0;&#x6570;&#x636E;</h4>
+<ol>
+<li><p>&#x5EFA;&#x7ACB;&#x5B9E;&#x4F53;&#x7C7B;&#x5BF9;&#x8C61;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;set&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;&#x9700;&#x8981;&#x66F4;&#x6539;&#x7684;&#x5C5E;&#x6027;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;<code>updateAll()</code>&#x65B9;&#x6CD5;, &#x4F20;&#x5165;&#x76F8;&#x5E94;&#x7684;where&#x5B50;&#x53E5;&#x8FDB;&#x884C;&#x66F4;&#x65B0;</p>
+<ul>
+<li><p>&#x82E5;&#x4E0D;&#x4F20;&#x5165;&#x4EFB;&#x4F55;&#x53C2;&#x6570;, &#x5BF9;&#x6240;&#x6709;&#x6570;&#x636E;&#x6709;&#x6548;</p>
+</li>
+<li><p>&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4F20;&#x5165;where&#x5B50;&#x53E5;, &#x5177;&#x4F53;&#x6761;&#x4EF6;&#x7528; ? &#x5360;&#x4F4D;</p>
+</li>
+<li><p>&#x540E;&#x9762;&#x7684;&#x53C2;&#x6570;&#x4F9D;&#x6B21;&#x8865;&#x5145; ? &#x7684;&#x5185;&#x5BB9;</p>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="lang-java">   btn_updateDB.setOnClickListener((v)-&gt;{
+               Book_New book = <span class="hljs-keyword">new</span> Book_New();
+               book.setPrice(<span class="hljs-number">1111.12</span>);
+               book.setPages(<span class="hljs-number">8888</span>);
+
+               book.updateAll(<span class="hljs-string">&quot;author=? and id=?&quot;</span>, <span class="hljs-string">&quot;lilaoba&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>);
+           });
+</code></pre>
+<hr>
+<p>   &#x82E5;&#x8981;&#x5C06;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#x6062;&#x590D;&#x4E3A;&#x9ED8;&#x8BA4;&#x503C;  &#x6BD4;&#x5982;String&#x7684;null,  int&#x7684;0&#x7B49;, &#x4E0D;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x4E0A;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x4F20;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;</p>
+<p>   &#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x4E13;&#x95E8;&#x7684;<code>setToDefault()</code>&#x65B9;&#x6CD5;,  &#x4F20;&#x5165;&#x5217;&#x540D;String</p>
+<pre><code class="lang-java">   book.setToDefault(<span class="hljs-string">&quot;author&quot;</span>);
+   book.updateAll(<span class="hljs-string">&quot;pages=?&quot;</span>, <span class="hljs-string">&quot;12&quot;</span>);
+   <span class="hljs-comment">// &#x5C06;pages=12&#x7684;&#x6240;&#x6709;&#x8BB0;&#x5F55;&#x7684;author&#x66F4;&#x65B0;&#x4E3A;&#x9ED8;&#x8BA4;&#x503C;</span>
+</code></pre>
+<hr>
+<p>   &#x53E6;&#x5916; &#x8C03;&#x7528;&#x8FC7;save&#x65B9;&#x6CD5;&#x7684;&#x8BED;&#x53E5;&#x548C;&#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x7684;&#x5BF9;&#x8C61; &#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5BF9;&#x6B64;&#x5BF9;&#x8C61;&#x4FEE;&#x6539;&#x540E;&#x518D;&#x8C03;&#x7528;save&#x65B9;&#x6CD5;</p>
+<h4 id="&#x5220;&#x9664;&#x6570;&#x636E;">&#x5220;&#x9664;&#x6570;&#x636E;</h4>
+<p>   &#x7C7B;&#x4F3C;&#x4E8E;&#x66F4;&#x65B0;</p>
+<p>   &#x8C03;&#x7528;DataSupport&#x91CC;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;<code>deleteAll</code></p>
+<ul>
+<li>&#x53C2;&#x6570;1: &#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x5220;&#x9664;&#x6307;&#x5B9A;&#x8868;&#x7684;&#x6570;&#x636E;</li>
+<li>&#x53C2;&#x6570;2: where&#x5B50;&#x53E5;&#x548C;&#x5360;&#x4F4D;&#x7B26;</li>
+<li><p>&#x5176;&#x4ED6;: &#x5360;&#x4F4D;&#x7B26;&#x8865;&#x5145;</p>
+<pre><code class="lang-java">btn_updateDB.setOnClickListener((v)-&gt;{
+          DataSupport.deleteAll(Book_new.class, <span class="hljs-string">&quot;author=? and id=?&quot;</span>, <span class="hljs-string">&quot;lilaoba&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>);
+      });
+</code></pre>
+</li>
+</ul>
+<h4 id="&#x67E5;&#x8BE2;&#x6570;&#x636E;">&#x67E5;&#x8BE2;&#x6570;&#x636E;</h4>
+<p>&#x57FA;&#x672C;&#x64CD;&#x4F5C;</p>
+<pre><code class="lang-java">List&lt;Book_New&gt; books = DataSupport.findAll(Book.class);
+</code></pre>
+<p>&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x8BB0;&#x5F55;&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x5217;&#x8868;  &#x76F8;&#x5F53;&#x4E8E; <code>select * from Book_New</code></p>
+<hr>
+<p>&#x7279;&#x6B8A;&#x4F4D;&#x7F6E;</p>
+<p>&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;</p>
+<pre><code class="lang-java">Book firstbook = DataSupport.findFirst(Book.class);
+</code></pre>
+<p>&#x6700;&#x540E;&#x4E00;&#x6761;&#x8BB0;&#x5F55;</p>
+<pre><code class="lang-java">Book lastbook = DataSupport.findLast(Book.class);
+</code></pre>
+<hr>
+<p>&#x8FDE;&#x7F00;&#x67E5;&#x8BE2;</p>
+<pre><code class="lang-java">
+select(String colums);<span class="hljs-comment">// &#x9009;&#x5217;</span>
+
+where(String sql, sqlArrs);<span class="hljs-comment">// where&#x5B50;&#x53E5;</span>
+
+order(String seq);<span class="hljs-comment">// &#x6392;&#x5E8F; &#x76F8;&#x5F53;&#x4E8E;order by &#x5173;&#x952E;&#x5B57;</span>
+
+limit(<span class="hljs-keyword">int</span> num);<span class="hljs-comment">// &#x6307;&#x5B9A;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x7684;&#x6570;&#x91CF;</span>
+
+offset(<span class="hljs-keyword">int</span> offset);<span class="hljs-comment">// &#x504F;&#x79FB;&#x91CF;</span>
+
+find(xx.class);<span class="hljs-comment">//&#x76F8;&#x5F53;&#x4E8E; from [xx&#x8868;]</span>
+</code></pre>
+<p>&#x4F8B;&#x5982;</p>
+<pre><code class="lang-java">List&lt;Book&gt; books = DatabaseSupport.select(<span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;id&quot;</span>)
+    .where(<span class="hljs-string">&quot;pages&gt;?&quot;</span>, <span class="hljs-string">&quot;10&quot;</span>)
+    .order(<span class="hljs-string">&quot;id decs&quot;</span>)
+    .limit(<span class="hljs-number">10</span>)
+    .offset(<span class="hljs-number">1</span>)
+    .find(Book.class);
+</code></pre>
+<hr>
+<p>SQL&#x539F;&#x751F;&#x67E5;&#x8BE2;</p>
+<pre><code class="lang-java">Cursor cursor = DatabaseSupport.findBySQL(<span class="hljs-string">&quot;select * from Book where name=?&quot;</span>, <span class="hljs-string">&quot;lilaoba&quot;</span>);
+</code></pre>
+<p>&#x8981;&#x7ECF;&#x8FC7;&#x8FED;&#x4EE3;&#x624D;&#x80FD;&#x4F7F;&#x7528;,&#x53C2;&#x89C1;<code>`SQLiteDatabase</code><a href="#&#x67E5;&#x8BE2;&#x6570;&#x636E;">&#x67E5;&#x770B;</a> </p>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-04-18 22:48:21
+</span></footer>
                                 
                                 </section>
                             
@@ -368,7 +785,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第六章 持久化存储","level":"1.7","depth":1,"previous":{"title":"第五章 广播和广播接收器BroadCast Receiver","level":"1.6","depth":1,"path":"chapter5.md","ref":"./chapter5.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter6.md","mtime":"2020-04-16T07:16:40.631Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-16T07:30:57.539Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第六章 持久化存储","level":"1.7","depth":1,"previous":{"title":"第五章 广播和广播接收器BroadCast Receiver","level":"1.6","depth":1,"path":"chapter5.md","ref":"./chapter5.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toc","fontsettings","tbfed-pagefooter","links","disqus","github","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"webpack-handbook"},"github":{"url":"https://github.com/AaronFang123/Android_Notes"},"editlink":{"base":"https://github.com/AaronFang123/Android_Notes","label":"编辑本页面"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"family":"serif","size":12,"theme":"white"},"highlight":{},"links":{"gitbook":false,"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter6.md","mtime":"2020-04-18T14:48:21.537Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-18T14:50:02.240Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -376,6 +793,26 @@
         
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-links/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
     
         
         <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
@@ -399,10 +836,6 @@
     
         
         <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
 

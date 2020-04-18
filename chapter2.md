@@ -1,3 +1,5 @@
+<!-- toc -->
+
 ## 第二章 Activity的基本用法
 
 ### findViewById()

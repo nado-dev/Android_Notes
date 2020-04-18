@@ -1,3 +1,5 @@
+<!-- toc -->
+
 ## 第四章 fragment碎片
 
 碎片Fragment是一段可以嵌入活动中的UI片段

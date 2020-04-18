@@ -17,15 +17,27 @@
     
             
                 
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-links/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
         
@@ -225,7 +237,44 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="&#x7B2C;&#x4E00;&#x7AE0;-android&#x4E0E;android-studio">&#x7B2C;&#x4E00;&#x7AE0; Android&#x4E0E;Android Studio</h2>
+                                <!-- toc -->
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-android%E4%B8%8Eandroid-studio">&#x7B2C;&#x4E00;&#x7AE0; Android&#x4E0E;Android Studio</a><ul>
+<li><a href="#1.android%E7%B3%BB%E7%BB%9F%E9%87%8D%E8%A6%81%E6%A6%82%E5%BF%B5">1.Android&#x7CFB;&#x7EDF;&#x91CD;&#x8981;&#x6982;&#x5FF5;</a></li>
+<li><a href="#2.android-studio%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84">2.Android Studio&#x7684;&#x9879;&#x76EE;&#x7EC4;&#x7EC7;&#x67B6;&#x6784;</a><ul>
+<li><a href="#.gradle-%E5%92%8C-.idea">.gradle &#x548C; .idea</a></li>
+<li><a href="#app">app</a></li>
+<li><a href="#build">build</a></li>
+<li><a href="#gradle">gradle</a></li>
+<li><a href="#.gitignore">.gitignore</a></li>
+<li><a href="#build.gradle">build.gradle</a></li>
+<li><a href="#gradle.properties">gradle.properties</a></li>
+<li><a href="#gradlew%E4%B8%8Egradle.bat">gradlew&#x4E0E;gradle.bat</a></li>
+<li><a href="#%5B%E9%A1%B9%E7%9B%AE%E5%90%8D%5D.iml">[&#x9879;&#x76EE;&#x540D;].iml</a></li>
+<li><a href="#local.properities">local.properities</a></li>
+<li><a href="#setting.gradle">setting.gradle</a></li>
+</ul>
+</li>
+<li><a href="#3.app%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E5%86%85%E5%AE%B9%E5%8F%8A%E4%BD%9C%E7%94%A8">3.app&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x5185;&#x5BB9;&#x53CA;&#x4F5C;&#x7528;</a><ul>
+<li><a href="#build">build</a></li>
+<li><a href="#libs">libs</a></li>
+<li><a href="#androidtest">androidTest</a></li>
+<li><a href="#java">java</a></li>
+<li><a href="#res">res</a></li>
+<li><a href="#androidmanifest.xml">AndroidManifest.xml</a></li>
+<li><a href="#test">test</a></li>
+<li><a href="#app.iml">app.iml</a></li>
+<li><a href="#build.gradle">build.gradle</a></li>
+<li><a href="#proguard-rules.pro">proguard-rules.pro</a></li>
+</ul>
+</li>
+<li><a href="#4.%E6%B3%A8%E5%86%8C%E6%B4%BB%E5%8A%A8%E5%8F%8A%E5%A3%B0%E6%98%8E%E4%B8%BB%E6%B4%BB%E5%8A%A8">4.&#x6CE8;&#x518C;&#x6D3B;&#x52A8;&#x53CA;&#x58F0;&#x660E;&#x4E3B;&#x6D3B;&#x52A8;</a></li>
+<li><a href="#5.log%E5%B7%A5%E5%85%B7">5.Log&#x5DE5;&#x5177;</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<h2 id="&#x7B2C;&#x4E00;&#x7AE0;-android&#x4E0E;android-studio">&#x7B2C;&#x4E00;&#x7AE0; Android&#x4E0E;Android Studio</h2>
 <h3 id="1android&#x7CFB;&#x7EDF;&#x91CD;&#x8981;&#x6982;&#x5FF5;">1.Android&#x7CFB;&#x7EDF;&#x91CD;&#x8981;&#x6982;&#x5FF5;</h3>
 <ul>
 <li>&#x67B6;&#x6784; &#x81EA;&#x5E95;&#x5411;&#x4E0A;&#xFF1A;</li>
@@ -368,10 +417,12 @@ include &apos;:app&apos;
 </li>
 <li><p><code>Log.e()</code>  &#x6253;&#x5370;error &#x4E25;&#x91CD;&#x95EE;&#x9898;</p>
 <p>&#x5728;logcat&#x4E2D;&#x8BBE;&#x7F6E;&#x4E86;&#x7EA7;&#x522B;&#x65F6;,&#x53EA;&#x4F1A;&#x5411;&#x4E0A;&#x663E;&#x793A;&#x76F8;&#x5E94;&#x7684;&#x8BED;&#x53E5;.</p>
-<p>&#x5982;Log.v()&#x8BED;&#x53E5; &#x4E0D;&#x4F1A;&#x88AB;logcat&#x4E2D;&#x7684;error&#x6761;&#x4EF6;&#x663E;&#x793A;</p>
+<p>&#x5982;Log.v()&#x8BED;&#x53E5; &#x4E0D;&#x4F1A;&#x88AB;logcat&#x4E2D;&#x7684;error&#x6761;&#x4EF6;&#x663E;&#x793A; </p>
 </li>
 </ul>
-
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-04-18 22:49:10
+</span></footer>
                                 
                                 </section>
                             
@@ -414,7 +465,7 @@ include &apos;:app&apos;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第一章 Android与Android Studio","level":"1.2","depth":1,"next":{"title":"第二章 Activity的基本用法","level":"1.3","depth":1,"path":"chapter2.md","ref":"./chapter2.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1.md","mtime":"2020-04-16T07:15:55.988Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-16T07:30:57.539Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第一章 Android与Android Studio","level":"1.2","depth":1,"next":{"title":"第二章 Activity的基本用法","level":"1.3","depth":1,"path":"chapter2.md","ref":"./chapter2.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toc","fontsettings","tbfed-pagefooter","links","disqus","github","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"webpack-handbook"},"github":{"url":"https://github.com/AaronFang123/Android_Notes"},"editlink":{"base":"https://github.com/AaronFang123/Android_Notes","label":"编辑本页面"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"family":"serif","size":12,"theme":"white"},"highlight":{},"links":{"gitbook":false,"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1.md","mtime":"2020-04-18T14:49:10.286Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-18T14:50:02.240Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -422,6 +473,26 @@ include &apos;:app&apos;
         
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-links/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
     
         
         <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
@@ -445,10 +516,6 @@ include &apos;:app&apos;
     
         
         <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
 
