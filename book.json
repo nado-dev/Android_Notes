@@ -1,11 +1,12 @@
 {
-  "plugins": [ 
-	"toc",
-	"fontsettings",
-	"tbfed-pagefooter",
-	"links",
-	"disqus",
-	"github"
+  "plugins": [
+    "toc",
+    "fontsettings",
+    "tbfed-pagefooter",
+    "links",
+    "disqus",
+    "github",
+    "editlink"
   ],
 
   "pluginsConfig": {
