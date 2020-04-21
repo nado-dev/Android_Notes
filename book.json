@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "plugins": [ 
 	"toc",
 	"fontsettings",
@@ -7,6 +8,16 @@
 	"github",
 	"editlink",
 	"simple-page-toc"
+=======
+  "plugins": [
+    "toc",
+    "fontsettings",
+    "tbfed-pagefooter",
+    "links",
+    "disqus",
+    "github",
+    "editlink"
+>>>>>>> 5381abe16a0cd7dc8ed314fd0ecec71825e2bb78
   ],
 
   "pluginsConfig": {
