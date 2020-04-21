@@ -4,8 +4,9 @@
 	"fontsettings",
 	"tbfed-pagefooter",
 	"links",
-	"disqus",
-	"github"
+	"github",
+	"editlink",
+	"simple-page-toc"
   ],
 
   "pluginsConfig": {
@@ -32,9 +33,6 @@
                 "twitter": false,
                 "all": false
 			}
-		},
-		"disqus": {
-			"shortName": "webpack-handbook"
 		},
 		"github": {
 		"url": "https://github.com/AaronFang123/Android_Notes"

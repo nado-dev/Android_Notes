@@ -29,10 +29,6 @@
                 
             
                 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
-                
-            
-                
                 <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -240,26 +236,12 @@
                                 <!-- toc -->
 <ul>
 <li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-activity%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95">&#x7B2C;&#x4E8C;&#x7AE0; Activity&#x7684;&#x57FA;&#x672C;&#x7528;&#x6CD5;</a><ul>
-<li><a href="#findviewbyid(">findViewById()</a>)</li>
+<li><a href="#findviewbyid">findViewById()</a></li>
 <li><a href="#toast">Toast</a></li>
 <li><a href="#%E8%8F%9C%E5%8D%95menu">&#x83DC;&#x5355;menu</a></li>
 <li><a href="#%E9%94%80%E6%AF%81%E6%B4%BB%E5%8A%A8">&#x9500;&#x6BC1;&#x6D3B;&#x52A8;</a></li>
-<li><a href="#intent">Intent</a><ul>
-<li><a href="#%E6%98%BE%E5%BC%8Fintent">&#x663E;&#x5F0F;Intent</a></li>
-<li><a href="#%E9%9A%90%E5%BC%8Fintent">&#x9690;&#x5F0F;Intent</a></li>
-<li><a href="#%E9%9A%90%E5%BC%8Fintent%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%B4%BB%E5%8A%A8">&#x9690;&#x5F0F;Intent&#x8C03;&#x7528;&#x5176;&#x4ED6;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x6D3B;&#x52A8;</a></li>
-<li><a href="#%E9%9A%90%E5%BC%8Fintent%E5%9C%A8%E6%B4%BB%E5%8A%A8%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF">&#x9690;&#x5F0F;Intent&#x5728;&#x6D3B;&#x52A8;&#x4E4B;&#x95F4;&#x4F20;&#x9012;&#x4FE1;&#x606F;</a>
-~ <a href="#1.%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE%E7%BB%99%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%B4%BB%E5%8A%A8">1.&#x4F20;&#x9012;&#x6570;&#x636E;&#x7ED9;&#x4E0B;&#x4E00;&#x4E2A;&#x6D3B;&#x52A8;</a>
-~ <a href="#2.%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE%E7%BB%99%E4%B8%8A%E4%B8%80%E4%B8%AA%E6%B4%BB%E5%8A%A8">2.&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x7ED9;&#x4E0A;&#x4E00;&#x4E2A;&#x6D3B;&#x52A8;</a></li>
-</ul>
-</li>
-<li><a href="#%E6%B4%BB%E5%8A%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">&#x6D3B;&#x52A8;&#x751F;&#x547D;&#x5468;&#x671F;</a><ul>
-<li><a href="#%E6%B4%BB%E5%8A%A8%E7%8A%B6%E6%80%81">&#x6D3B;&#x52A8;&#x72B6;&#x6001;</a></li>
-<li><a href="#%E7%94%9F%E5%AD%98%E6%9C%9F">&#x751F;&#x5B58;&#x671F;</a></li>
-<li><a href="#%E7%94%9F%E5%AD%98%E6%9C%9F">&#x751F;&#x5B58;&#x671F;</a></li>
-<li><a href="#%E6%B4%BB%E5%8A%A8%E8%A2%AB%E5%9B%9E%E6%94%B6%E4%BA%86%E6%80%8E%E4%B9%88%E5%8A%9E-onsaveinstancestate(">&#x6D3B;&#x52A8;&#x88AB;&#x56DE;&#x6536;&#x4E86;&#x600E;&#x4E48;&#x529E; onSaveInstanceState()</a>)</li>
-</ul>
-</li>
+<li><a href="#intent">Intent</a></li>
+<li><a href="#%E6%B4%BB%E5%8A%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">&#x6D3B;&#x52A8;&#x751F;&#x547D;&#x5468;&#x671F;</a></li>
 <li><a href="#%E6%B4%BB%E5%8A%A8%E7%9A%84%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F">&#x6D3B;&#x52A8;&#x7684;&#x542F;&#x52A8;&#x6A21;&#x5F0F;</a></li>
 </ul>
 </li>
@@ -538,7 +520,7 @@ finish();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第二章 Activity的基本用法","level":"1.3","depth":1,"next":{"title":"第三章 布局Layout","level":"1.4","depth":1,"path":"chapter3.md","ref":"./chapter3.md","articles":[]},"previous":{"title":"第一章 Android与Android Studio","level":"1.2","depth":1,"path":"chapter1.md","ref":"./chapter1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toc","fontsettings","tbfed-pagefooter","links","disqus","github","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"webpack-handbook"},"github":{"url":"https://github.com/AaronFang123/Android_Notes"},"editlink":{"base":"https://github.com/AaronFang123/Android_Notes","label":"编辑本页面"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"family":"serif","size":12,"theme":"white"},"highlight":{},"links":{"gitbook":false,"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter2.md","mtime":"2020-04-18T14:48:41.641Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-18T14:50:02.240Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第二章 Activity的基本用法","level":"1.3","depth":1,"next":{"title":"第三章 布局Layout","level":"1.4","depth":1,"path":"chapter3.md","ref":"./chapter3.md","articles":[]},"previous":{"title":"第一章 Android与Android Studio","level":"1.2","depth":1,"path":"chapter1.md","ref":"./chapter1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toc","fontsettings","tbfed-pagefooter","links","github","editlink","simple-page-toc","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/AaronFang123/Android_Notes"},"editlink":{"label":"编辑本页面","multilingual":false,"base":"https://github.com/AaronFang123/Android_Notes"},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"family":"serif","size":12,"theme":"white"},"highlight":{},"links":{"gitbook":false,"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter2.md","mtime":"2020-04-18T14:48:41.641Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-21T06:19:17.101Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -556,15 +538,11 @@ finish();
         
     
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
-        
-    
-        
         <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-editlink/plugin.js"></script>
         
     
         
