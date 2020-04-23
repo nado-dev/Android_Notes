@@ -1,0 +1,785 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第九章 Android网络应用初步 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-links/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="chapter8.md" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    第一章 Android与Android Studio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter2.html">
+            
+                <a href="chapter2.html">
+            
+                    
+                    第二章 Activity的基本用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                    第三章 布局Layout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                    第四章  fragment碎片
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    第五章 广播和广播接收器BroadCast Receiver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                    第六章 持久化存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter7.md">
+            
+                <span>
+            
+                    
+                    第七章
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="chapter8.md">
+            
+                <span>
+            
+                    
+                    第八章
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10" data-path="chapter9.html">
+            
+                <a href="chapter9.html">
+            
+                    
+                    第九章 Android网络应用初步
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第九章 Android网络应用初步</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <!-- toc -->
+<ul>
+<li><a href="#android%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%88%9D%E6%AD%A5">Android&#x7F51;&#x7EDC;&#x6280;&#x672F;&#x521D;&#x6B65;</a><ul>
+<li><a href="#webview">WebView</a></li>
+<li><a href="#android%E4%B8%8A%E7%9A%84http%E5%8D%8F%E8%AE%AE">Android&#x4E0A;&#x7684;HTTP&#x534F;&#x8BAE;</a></li>
+<li><a href="#json%E6%A0%BC%E5%BC%8F%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90">JSON&#x683C;&#x5F0F;&#x6570;&#x636E;&#x89E3;&#x6790;</a></li>
+<li><a href="#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5-http%E5%B7%A5%E5%85%B7%E7%B1%BB%E7%9A%84%E5%B0%81%E8%A3%85">&#x6700;&#x4F73;&#x5B9E;&#x8DF5; HTTP&#x5DE5;&#x5177;&#x7C7B;&#x7684;&#x5C01;&#x88C5;</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<h2 id="android&#x7F51;&#x7EDC;&#x6280;&#x672F;&#x521D;&#x6B65;">Android&#x7F51;&#x7EDC;&#x6280;&#x672F;&#x521D;&#x6B65;</h2>
+<h3 id="webview">WebView</h3>
+<p>&#x7528;&#x4E8E;&#x663E;&#x793A;&#x5404;&#x79CD;<strong>&#x7F51;&#x9875;</strong> ( html + css + js )</p>
+<ul>
+<li><p>&#x5E03;&#x5C40;</p>
+<pre><code class="lang-xml"> <span class="hljs-tag">&lt;<span class="hljs-name">WebView</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/webview&quot;</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>/&gt;</span>
+</code></pre>
+</li>
+<li><p>&#x4EE3;&#x7801;</p>
+<pre><code class="lang-java"> WebView webView = (WebView) findViewById(R.id.webview);
+ <span class="hljs-comment">// getSetting&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x5C5E;&#x6027;</span>
+ <span class="hljs-comment">// &#x5141;&#x8BB8;js&#x811A;&#x672C;</span>
+ webView.getSettings().setJavaScriptEnabled(<span class="hljs-keyword">true</span>);
+ <span class="hljs-comment">// &#x4F5C;&#x7528;&#x662F;&#x5F53;&#x8981;&#x6253;&#x5F00;&#x65B0;&#x7F51;&#x9875;&#x65F6;, &#x4ECD;&#x7136;&#x5728;&#x5F53;&#x524D;WebView&#x4E2D;&#x6253;&#x5F00;, &#x800C;&#x4E0D;&#x662F;&#x901A;&#x8FC7;&#x7CFB;&#x7EDF;&#x6D4F;&#x89C8;&#x5668;</span>
+ webView.setWebViewClient(<span class="hljs-keyword">new</span> WebViewClient());
+ webView.loadUrl(<span class="hljs-string">&quot;http://android.aaronfang.fun&quot;</span>);
+</code></pre>
+</li>
+</ul>
+<h3 id="android&#x4E0A;&#x7684;http&#x534F;&#x8BAE;">Android&#x4E0A;&#x7684;HTTP&#x534F;&#x8BAE;</h3>
+<h4 id="&#x4F7F;&#x7528;&#x539F;&#x751F;httpurlconnection">&#x4F7F;&#x7528;&#x539F;&#x751F;HttpURLConnection</h4>
+<ol>
+<li><p>&#x5B9E;&#x4F8B;&#x5316;&#x4E00;&#x4E2A;URL&#x7C7B;</p>
+</li>
+<li><p>&#x8C03;&#x7528;<code>openConnection()</code>&#x65B9;&#x6CD5;, &#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x8FDE;HTTP&#x8FDE;&#x63A5;&#x5BF9;&#x8C61;<code>HttpURLConnection</code></p>
+</li>
+<li><p>&#x5728;&#x8FDE;&#x63A5;&#x5BF9;&#x8C61;<code>HttpURLConnection</code>&#x4E2D;&#x8BBE;&#x7F6E;HTTP&#x8BF7;&#x6C42;&#x4F7F;&#x7528;&#x7684;&#x65B9;&#x6CD5;<code>GET</code>, <code>POST</code>&#x7B49;</p>
+</li>
+<li><p>&#x8BBE;&#x7F6E;&#x8D85;&#x65F6;, headers&#x7B49;</p>
+</li>
+<li><p>&#x8C03;&#x7528;&#x8FDE;&#x63A5;&#x5BF9;&#x8C61;&#x7684;<code>getInputStream()</code>&#x5BF9;&#x8C61;, &#x83B7;&#x5F97;&#x8F93;&#x5165;&#x6D41;<code>InputStream</code>, &#x5BF9;&#x6D41;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x8BFB;&#x5199;</p>
+</li>
+<li><p>&#x5173;&#x95ED;&#x8FDE;&#x63A5;, &#x8C03;&#x7528;<code>disconnect()</code>&#x5173;&#x95ED;&#x8FDE;&#x63A5;</p>
+</li>
+</ol>
+<p>   GET&#x65B9;&#x6CD5;&#x793A;&#x4F8B;</p>
+<pre><code class="lang-java">   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">loadJson</span><span class="hljs-params">()</span></span>{
+           <span class="hljs-keyword">new</span> Thread(<span class="hljs-keyword">new</span> Runnable() {
+               <span class="hljs-meta">@Override</span>
+               <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+                   <span class="hljs-keyword">try</span> {
+                       <span class="hljs-comment">// &#x5B9A;&#x4E49;URL</span>
+                       URL url = <span class="hljs-keyword">new</span> URL(<span class="hljs-string">&quot;http://test2.aaronfang.fun/api/v1/postclass&quot;</span>);
+                       <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x8FDE;&#x63A5;</span>
+                       HttpURLConnection connection =  (HttpURLConnection) url.openConnection();
+                       <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x8D85;&#x65F6;&#x65F6;&#x95F4;</span>
+                       connection.setConnectTimeout(<span class="hljs-number">10000</span>);
+                       <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x65B9;&#x6CD5;</span>
+                       connection.setRequestMethod(<span class="hljs-string">&quot;GET&quot;</span>);
+                       <span class="hljs-comment">// &#x8BBE;&#x7F6E;headers</span>
+                       connection.setRequestProperty(<span class="hljs-string">&quot;Content-Type&quot;</span>, <span class="hljs-string">&quot;application/json;charset=UTF-8&quot;</span>);
+                       connection.setRequestProperty(<span class="hljs-string">&quot;Content-Type&quot;</span>, <span class="hljs-string">&quot;application/x-www-form-urlencoded&quot;</span>);
+                       <span class="hljs-comment">// &#x6253;&#x5F00;&#x8FDE;&#x63A5;</span>
+                       connection.connect();
+                       <span class="hljs-comment">// &#x83B7;&#x53D6;&#x72B6;&#x6001;&#x7801;</span>
+                       <span class="hljs-keyword">int</span> resCode = connection.getResponseCode();
+
+                       <span class="hljs-keyword">if</span> (resCode == <span class="hljs-number">200</span>){
+   <span class="hljs-comment">//                        Map&lt;String, List&lt;String&gt;&gt; headerFields = connection.getHeaderFields();</span>
+   <span class="hljs-comment">//                        Set&lt;Map.Entry&lt;String, List&lt;String&gt;&gt;&gt; entries = headerFields.entrySet();</span>
+   <span class="hljs-comment">//                        for (Map.Entry&lt;String, List&lt;String&gt;&gt; entry : entries){</span>
+   <span class="hljs-comment">//                            Log.d(TAG, entry.getKey()+&quot; = &quot; + entry.getValue());</span>
+   <span class="hljs-comment">//                        }</span>
+
+                           InputStream inputStream = connection.getInputStream();
+                           BufferedReader bufferedReader = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(inputStream));
+
+                           String json = bufferedReader.readLine();
+                           Log.d(TAG, <span class="hljs-string">&quot;content&quot;</span> + <span class="hljs-string">&quot; = &quot;</span>+ json);
+                           <span class="hljs-comment">// &#x66F4;&#x65B0;UI</span>
+                           updateUI();
+                       }
+
+                   } <span class="hljs-keyword">catch</span> (Exception e) {
+                       e.printStackTrace();
+                       connect.disconnect();
+                   }
+
+               }
+           }).start();
+       }
+</code></pre>
+<p>   <strong>&#x7F51;&#x7EDC;&#x6709;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#x9700;&#x8981;&#x5728;&#x5B50;&#x7EBF;&#x7A0B;&#x5185;&#x8FDB;&#x884C;</strong></p>
+<p>   <strong>&#x800C;UI&#x7684;&#x66F4;&#x65B0;&#x4E0D;&#x5141;&#x8BB8;&#x5728;&#x5B50;&#x7EBF;&#x7A0B;&#x4E2D;&#x8FD0;&#x884C;, &#x9700;&#x8981;&#x4F7F;&#x7528;&#x7279;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#x5C06;&#x5176;&#x5207;&#x6362;&#x56DE;&#x4E3B;&#x7EBF;&#x7A0B;</strong></p>
+<pre><code class="lang-java">   <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">updateUI</span><span class="hljs-params">()</span> </span>{
+           runOnUiThread(<span class="hljs-keyword">new</span> Runnable() {
+               <span class="hljs-meta">@Override</span>
+               <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+                   tv_confirm.setText(<span class="hljs-string">&quot;load! &quot;</span>);
+               }
+           });
+       }
+</code></pre>
+<p>POST&#x65B9;&#x6CD5;&#x793A;&#x4F8B; (&#x90E8;&#x5206;):</p>
+<pre><code class="lang-java">connection.setRequestmethod(<span class="hljs-string">&quot;POST&quot;</span>);
+<span class="hljs-comment">// &#x83B7;&#x53D6;&#x8FDE;&#x63A5;&#x7684;&#x8F93;&#x51FA;&#x6D41;</span>
+DataOutputStream out = <span class="hljs-keyword">new</span> DataOutputStream(connection.getOutputStream);
+<span class="hljs-comment">// &#x5411;&#x8F93;&#x51FA;&#x6D41;&#x5199;&#x5165;POST&#x643A;&#x5E26;&#x7684;&#x4FE1;&#x606F; &#x6570;&#x636E;&#x4E4B;&#x95F4;&#x4F7F;&#x7528; &amp; &#x9694;&#x5F00;</span>
+out.writeBytes(<span class="hljs-string">&quot;userName=admin&amp;password=1234&quot;</span>);
+</code></pre>
+<hr>
+<p>UI&#x63A7;&#x4EF6;&#x4ECB;&#x7ECD;:<code>ScrollView</code></p>
+<p>&#x6EDA;&#x52A8;&#x89C6;&#x56FE;, &#x5F53;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x5185;&#x5BB9;&#x592A;&#x591A;&#x9700;&#x8981;&#x6EDA;&#x52A8;&#x663E;&#x793A;&#x65F6;&#x4F7F;&#x7528;</p>
+<p>&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#x5176;&#x4ED6;&#x63A7;&#x4EF6;</p>
+<hr>
+<h4 id="&#x5F00;&#x6E90;&#x6846;&#x67B6;okhttp">&#x5F00;&#x6E90;&#x6846;&#x67B6;OkHttp</h4>
+<p>&#x4F9D;&#x8D56;</p>
+<pre><code>implementation &apos;com.squareup.okhttp3:okhttp:3.14.1&apos;
+</code></pre><ol>
+<li>&#x5B9E;&#x4F8B;&#x5316;&#x5BA2;&#x6237;&#x7AEF;<code>OkHttpClient</code></li>
+<li>&#x5B9E;&#x4F8B;&#x5316;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;<code>Request</code>, &#x901A;&#x8FC7;<code>Request.Builder()</code>&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x8FDE;&#x7F00;&#x65B9;&#x6CD5;&#x4E30;&#x5BCC;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;&#xFF0C; &#x6700;&#x540E;&#x8C03;&#x7528;build()&#x63D0;&#x4EA4;</li>
+<li>&#x5411;&#x5BA2;&#x6237;&#x7AEF;&#x63D0;&#x4EA4;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;<code>newCall(request).execute()</code>  &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;<code>Request</code>&#x5BF9;&#x8C61;, &#x91CC;&#x9762;&#x542B;&#x6709;&#x8FD4;&#x56DE;</li>
+</ol>
+<p><code>GET</code>&#x65B9;&#x6CD5;&#x793A;&#x4F8B;:</p>
+<pre><code class="lang-java">    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">loadjson</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">new</span> Thread(<span class="hljs-keyword">new</span> Runnable() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+                <span class="hljs-comment">// &#x5B9E;&#x4F8B;&#x5316;OkHttpClient &#xFF0C;&#x5B9E;&#x4F8B;&#x5316;&#x5BA2;&#x6237;&#x7AEF;</span>
+                OkHttpClient client = <span class="hljs-keyword">new</span> OkHttpClient();
+                <span class="hljs-comment">// &#x5B9E;&#x4F8B;&#x5316;Request&#x5BF9;&#x8C61;&#xFF0C; &#x901A;&#x8FC7;Request.Builder()&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x8FDE;&#x7F00;&#x65B9;&#x6CD5;&#x4E30;&#x5BCC;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;&#xFF0C; &#x6700;&#x540E;&#x8C03;&#x7528;build()&#x63D0;&#x4EA4;</span>
+                Request request = <span class="hljs-keyword">new</span> Request.Builder()
+                        .url(<span class="hljs-string">&quot;http://test2.aaronfang.fun/api/v1/postclass&quot;</span>)
+                        .build();
+                <span class="hljs-keyword">try</span> {
+                    Response response = client.newCall(request).execute();
+                    <span class="hljs-keyword">int</span> recode = response.code();
+                    <span class="hljs-keyword">if</span> (recode == <span class="hljs-number">200</span>){
+                        String res = response.body() != <span class="hljs-keyword">null</span> ? response.body().string() : <span class="hljs-string">&quot;empty body&quot;</span>;
+                        Log.d(<span class="hljs-string">&quot;OKHTTP&quot;</span>, <span class="hljs-string">&quot;body&quot;</span>+res);
+                        UIUpdate(res);
+                    }
+                } <span class="hljs-keyword">catch</span> (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+    }
+
+ <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">UIUpdate</span><span class="hljs-params">(String res)</span> </span>{
+        runOnUiThread(<span class="hljs-keyword">new</span> Runnable() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+               tv_json.setText(res);
+            }
+        });
+    }
+</code></pre>
+<p><code>POST</code>&#x793A;&#x4F8B;:</p>
+<p><code>POST</code>&#x65B9;&#x6CD5;&#x9700;&#x8981;&#x63D0;&#x524D;&#x6784;&#x9020;&#x8BF7;&#x6C42;&#x4F53;<code>body</code> &#x901A;&#x8FC7;<code>RequestBody</code>&#x7C7B;&#x8FDB;&#x884C;&#x6784;&#x5EFA;</p>
+<p><code>FormBody.Builder</code>&#x6784;&#x5EFA;&#x8868;&#x5355;</p>
+<pre><code class="lang-java">RequestBody requestBody = <span class="hljs-keyword">new</span> FormBody.Builder()
+.add(<span class="hljs-string">&quot;username&quot;</span>, <span class="hljs-string">&quot;admin&quot;</span>)
+.add(<span class="hljs-string">&quot;password&quot;</span>, <span class="hljs-string">&quot;123&quot;</span>)
+.build();
+</code></pre>
+<p>&#x518D;&#x518D;&#x6784;&#x9020;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;&#x65F6;&#x8C03;&#x7528;<code>post(RequestBody requestBody)</code>&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-java"> Request request = <span class="hljs-keyword">new</span> Request.Builder()
+                        .url(<span class="hljs-string">&quot;http://xxx&quot;</span>)
+                         .post(requestBody)
+                        .build();
+</code></pre>
+<h3 id="json&#x683C;&#x5F0F;&#x6570;&#x636E;&#x89E3;&#x6790;">JSON&#x683C;&#x5F0F;&#x6570;&#x636E;&#x89E3;&#x6790;</h3>
+<h4 id="&#x5B98;&#x65B9;&#x7684;jsonobject">&#x5B98;&#x65B9;&#x7684;JSONObject</h4>
+<p>&#x5F85;&#x89E3;&#x6790;&#x7684;&#x6570;&#x636E;</p>
+<pre><code class="lang-json">{
+    <span class="hljs-string">&quot;msg&quot;</span>:<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x6210;&#x529F;&quot;</span>,
+    <span class="hljs-string">&quot;data&quot;</span>:{
+        <span class="hljs-string">&quot;list&quot;</span>:[
+            {
+                <span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-number">1</span>,
+                <span class="hljs-string">&quot;classname&quot;</span>:<span class="hljs-string">&quot;&#x65F6;&#x95F4;&#x7EBF;&quot;</span>
+            },
+            {
+                <span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-number">2</span>,
+                <span class="hljs-string">&quot;classname&quot;</span>:<span class="hljs-string">&quot;&#x7EFC;&#x5408;1&quot;</span>
+            },
+            {
+                <span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-number">3</span>,
+                <span class="hljs-string">&quot;classname&quot;</span>:<span class="hljs-string">&quot;&#x901F;&#x62A5;2&quot;</span>
+            },
+            {
+                <span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-number">4</span>,
+                <span class="hljs-string">&quot;classname&quot;</span>:<span class="hljs-string">&quot;&#x6B22;&#x4E50;&#x6076;&#x641E;&quot;</span>
+            },
+            {
+                <span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-number">5</span>,
+                <span class="hljs-string">&quot;classname&quot;</span>:<span class="hljs-string">&quot;&#x8DD1;&#x56E2;&quot;</span>
+            },
+            {
+                <span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-number">6</span>,
+                <span class="hljs-string">&quot;classname&quot;</span>:<span class="hljs-string">&quot;&#x5708;&#x5185;&quot;</span>
+            }
+        ]
+    }
+}
+</code></pre>
+<p>&#x4F7F;&#x7528;<code>get</code>&#x65B9;&#x6CD5;&#x53D6;&#x51FA;&#x6570;&#x636E;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">parseJSONWithJSONObject</span><span class="hljs-params">(String res)</span> </span>{
+        <span class="hljs-keyword">try</span> {
+                JSONObject jsonObject = <span class="hljs-keyword">new</span> JSONObject(res);
+                String status = jsonObject.getString(<span class="hljs-string">&quot;msg&quot;</span>);
+                String data = jsonObject.getString(<span class="hljs-string">&quot;data&quot;</span>);
+
+                Log.d(<span class="hljs-string">&quot;OkHttp&quot;</span>, <span class="hljs-string">&quot;msg=&quot;</span>+status);
+                Log.d(<span class="hljs-string">&quot;OkHttp&quot;</span>, <span class="hljs-string">&quot;data=&quot;</span>+data);
+;            
+        } <span class="hljs-keyword">catch</span> (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+</code></pre>
+<p>JSON&#x5BF9;&#x8C61; <code>JSONObject</code></p>
+<p>JSON&#x6570;&#x7EC4; <code>JSONArray</code></p>
+<h4 id="gson">GSON</h4>
+<h4 id="gsonformat&#x63D2;&#x4EF6;&#x751F;&#x6210;&#x5B9E;&#x4F53;&#x7C7B;">GsonFormat&#x63D2;&#x4EF6;&#x751F;&#x6210;&#x5B9E;&#x4F53;&#x7C7B;</h4>
+<ul>
+<li><p>&#x5B89;&#x88C5;GsonFormat&#x5B9E;&#x4F53;&#x7C7B;</p>
+<p><code>Files -&gt; Settings -&gt; Plugins  -&gt; search GsonFormat</code></p>
+<p>&#x5FEB;&#x6377;&#x952E;&#x6253;&#x5F00;<code>Alt + Insert -&gt; GsonFormat</code>   &#x6216;  <code>Alt + S</code></p>
+</li>
+<li><p>&#x751F;&#x6210;&#x5B9E;&#x4F53;&#x7C7B;</p>
+<p><code>GetTextItem.java</code></p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.example.androidnetworkdemo.domain;
+
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GetTextItem</span> </span>{
+    <span class="hljs-comment">/**
+     * msg : &#x83B7;&#x53D6;&#x6210;&#x529F;
+     * data : {&quot;list&quot;:[{&quot;id&quot;:1,&quot;classname&quot;:&quot;&#x65F6;&#x95F4;&#x7EBF;&quot;},{&quot;id&quot;:2,&quot;classname&quot;:&quot;&#x7EFC;&#x5408;1&quot;},{&quot;id&quot;:3,&quot;classname&quot;:&quot;&#x901F;&#x62A5;2&quot;},{&quot;id&quot;:4,&quot;classname&quot;:&quot;&#x6B22;&#x4E50;&#x6076;&#x641E;&quot;},{&quot;id&quot;:5,&quot;classname&quot;:&quot;&#x8DD1;&#x56E2;&quot;},{&quot;id&quot;:6,&quot;classname&quot;:&quot;&#x5708;&#x5185;&quot;}]}
+     */</span>
+
+    <span class="hljs-keyword">private</span> String msg;
+    <span class="hljs-keyword">private</span> DataBean data;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getMsg</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> msg;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setMsg</span><span class="hljs-params">(String msg)</span> </span>{
+        <span class="hljs-keyword">this</span>.msg = msg;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> DataBean <span class="hljs-title">getData</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> data;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setData</span><span class="hljs-params">(DataBean data)</span> </span>{
+        <span class="hljs-keyword">this</span>.data = data;
+    }
+
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DataBean</span> </span>{
+        <span class="hljs-keyword">private</span> List&lt;ListBean&gt; list;
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;ListBean&gt; <span class="hljs-title">getList</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> list;
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setList</span><span class="hljs-params">(List&lt;ListBean&gt; list)</span> </span>{
+            <span class="hljs-keyword">this</span>.list = list;
+        }
+
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ListBean</span> </span>{
+            <span class="hljs-comment">/**
+             * id : 1
+             * classname : &#x65F6;&#x95F4;&#x7EBF;
+             */</span>
+
+            <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> id;
+            <span class="hljs-keyword">private</span> String classname;
+
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getId</span><span class="hljs-params">()</span> </span>{
+                <span class="hljs-keyword">return</span> id;
+            }
+
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setId</span><span class="hljs-params">(<span class="hljs-keyword">int</span> id)</span> </span>{
+                <span class="hljs-keyword">this</span>.id = id;
+            }
+
+            <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getClassname</span><span class="hljs-params">()</span> </span>{
+                <span class="hljs-keyword">return</span> classname;
+            }
+
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setClassname</span><span class="hljs-params">(String classname)</span> </span>{
+                <span class="hljs-keyword">this</span>.classname = classname;
+            }
+        }
+    }
+}
+</code></pre>
+<p>&#x89E3;&#x6790;:</p>
+<p><a href="#&#x5B98;&#x65B9;&#x7684;JSONObject">&#x6E90;&#x6570;&#x636E;</a></p>
+<p>data&#x9879;&#x62BD;&#x8C61;&#x4E3A;DataBean&#x7C7B;
+data&#x4E2D;&#x7684;list&#x5BF9;&#x8C61;&#x62BD;&#x8C61;&#x4E3A;listBean</p>
+<pre><code class="lang-java">  <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">parseJSONWithGson</span><span class="hljs-params">(String res)</span> </span>{
+    Gson gson = <span class="hljs-keyword">new</span> Gson();
+      <span class="hljs-comment">// &#x5F97;&#x5230;JSON&#x5BF9;&#x8C61;</span>
+      GetTextItem getTextItem = gson.fromJson(res, GetTextItem.class);
+      String status = getTextItem.getMsg();
+
+    GetTextItem.DataBean dataBean = getTextItem.getData();
+      List&lt;GetTextItem.DataBean.ListBean&gt; list = dataBean.getList();
+
+    <span class="hljs-keyword">for</span> (GetTextItem.DataBean.ListBean listBean : list){
+          <span class="hljs-keyword">int</span> id = listBean.getId();
+          String classname = listBean.getClassname();
+
+        String info_d = <span class="hljs-string">&quot;id = &quot;</span>+ id +<span class="hljs-string">&quot;classname&quot;</span> + classname+ <span class="hljs-string">&quot;\n&quot;</span>;
+          info = info.concat(info_d);
+      }
+  }
+</code></pre>
+</li>
+</ul>
+<h3 id="&#x6700;&#x4F73;&#x5B9E;&#x8DF5;-http&#x5DE5;&#x5177;&#x7C7B;&#x7684;&#x5C01;&#x88C5;">&#x6700;&#x4F73;&#x5B9E;&#x8DF5; HTTP&#x5DE5;&#x5177;&#x7C7B;&#x7684;&#x5C01;&#x88C5;</h3>
+<h4 id="httprequest&#x7B80;&#x5355;&#x5C01;&#x88C5;">HttpRequest&#x7B80;&#x5355;&#x5C01;&#x88C5;</h4>
+<p>&#x58F0;&#x660E;&#x63A5;&#x53E3;&#x6765;&#x5B9E;&#x73B0;&#x56DE;&#x8C03;</p>
+<p>&#x5982;&#x679C;&#x5728;<code>sendHttpRequestByGetMethod()</code>&#x5185;&#x5F00;&#x542F;&#x5B50;&#x7EBF;&#x7A0B;&#x8FDB;&#x884C;&#x7F51;&#x7EDC;&#x64CD;&#x4F5C;&#x3002; &#x670D;&#x52A1;&#x5668;&#x7684;&#x54CD;&#x5E94;&#x6570;&#x636E;&#x662F;&#x65E0;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;&#xFF0C; &#x8BE5;&#x65B9;&#x6CD5;&#x5728;&#x670D;&#x52A1;&#x5668;&#x8FD8;&#x6CA1;&#x6765;&#x5F97;&#x53CA;&#x76F8;&#x5E94;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x5DF2;&#x7ECF;&#x7ED3;&#x675F;&#x4E86;&#x3002;</p>
+<p>&#x8FD9;&#x65F6;&#x5C31;&#x8981;&#x4F7F;&#x7528;Java&#x7684;&#x56DE;&#x8C03;&#x673A;&#x5236;&#xFF0C;&#x5148;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C; &#x5B9A;&#x4E49;&#x6267;&#x884C;&#x6210;&#x529F;&#x6216;&#x5931;&#x8D25;&#x7684;&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">HttpCallbackListener</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">onFinish</span><span class="hljs-params">(String response)</span></span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(Exception e)</span></span>;
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x5728;<code>sendHttpRequestByGetMethod()</code>&#x65B9;&#x6CD5;&#x4E2D;&#x4F20;&#x5165;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x7684;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;&#xFF08;&#x5373;&#x8981;&#x6C42;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x65F6;&#x5148;&#x91CD;&#x5199;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6362;&#x79CD;&#x8BF4;&#x6CD5;&#xFF0C;<code>sendHttpRequestByGetMethod()</code>&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x7684;&#x6210;&#x529F;&#x6216;&#x5931;&#x8D25;&#x6216;&#x5176;&#x4ED6;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x7684;&#x6761;&#x4EF6;&#x548C;&#x65F6;&#x673A;&#x7B49;&#xFF0C; &#x5728;&#x8C03;&#x7528;&#x65F6;&#x8981;&#x6C42;&#x5B9E;&#x73B0;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x7684;&#x5177;&#x4F53;&#x64CD;&#x4F5C;&#xFF0C; &#x4EE5;&#x53CA;&#x63A5;&#x6536;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x7684;&#x8FD4;&#x56DE;&#xFF09;</p>
+<pre><code class="lang-java">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sendHttpRequestByGetMethod</span><span class="hljs-params">(<span class="hljs-keyword">final</span> String address, <span class="hljs-keyword">final</span> HttpCallbackListener listener)</span></span>{
+        <span class="hljs-keyword">new</span> Thread(<span class="hljs-keyword">new</span> Runnable() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+                <span class="hljs-keyword">try</span> {
+                    URL url = <span class="hljs-keyword">new</span> URL(address);
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                    <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x8D85;&#x65F6;&#x65F6;&#x95F4;</span>
+                    connection.setConnectTimeout(<span class="hljs-number">10000</span>);
+                    <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x65B9;&#x6CD5;</span>
+                    connection.setRequestMethod(<span class="hljs-string">&quot;GET&quot;</span>);
+                    <span class="hljs-comment">// &#x8BBE;&#x7F6E;headers</span>
+
+                    connection.connect();
+                    InputStream in = connection.getInputStream();
+                    BufferedReader reader = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(in));
+                    StringBuilder response = <span class="hljs-keyword">new</span> StringBuilder();
+                    String line;
+                    <span class="hljs-keyword">while</span> ((line = reader.readLine()) != <span class="hljs-keyword">null</span>) {
+                        response.append(line);
+                    }
+                    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">null</span> != listener) {
+                        <span class="hljs-comment">// onFinish</span>
+                        listener.onFinish(response.toString());
+                    }
+
+                } <span class="hljs-keyword">catch</span> (Exception e) {
+                    <span class="hljs-keyword">if</span> (listener != <span class="hljs-keyword">null</span>) {
+                        listener.onError(e);
+                    }
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+</code></pre>
+<p>&#x8C03;&#x7528;</p>
+<pre><code class="lang-java"> btn_httputil.setOnClickListener((v)-&gt;{
+   HttpUtil.sendHttpRequestByGetMethod(<span class="hljs-string">&quot;http://test2.aaronfang.fun/api/v1/postclass&quot;</span>,
+                    <span class="hljs-keyword">new</span> HttpCallbackListener() {
+                        <span class="hljs-meta">@Override</span>
+                        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onFinish</span><span class="hljs-params">(String response)</span> </span>{
+                            updateUI();
+                            Log.d(<span class="hljs-string">&quot;httputils&quot;</span>, <span class="hljs-string">&quot;success&quot;</span>);
+                        }
+
+                        <span class="hljs-meta">@Override</span>
+                        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onError</span><span class="hljs-params">(Exception e)</span> </span>{
+
+                        }
+                    });
+        }
+</code></pre>
+<h4 id="okhttp&#x7B80;&#x5355;&#x5C01;&#x88C5;">OkHttp&#x7B80;&#x5355;&#x5C01;&#x88C5;</h4>
+<p>HttpUtil</p>
+<p><code>okhttp3.Callback</code>&#x662F;OkHttp&#x5E93;&#x4E2D;&#x81EA;&#x5E26;&#x7684;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x63A5;&#x53E3;, &#x5728;<code>client</code>&#x8C03;&#x7528;<code>newCall()</code>&#x540E;&#x6CA1;&#x6709;&#x8C03;&#x7528;<code>execute()</code>&#x65B9;&#x6CD5;, &#x8C03;&#x7528;&#x7684;&#x662F;<code>enqueue()</code>, &#x56E0;&#x4E3A;&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x5185;&#x90E8;&#x5DF2;&#x7ECF;&#x5F00;&#x542F;&#x4E86;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;, &#x5728;&#x5B50;&#x7EBF;&#x7A0B;&#x5728;&#x8FDB;&#x884C;HTTP&#x8BF7;&#x6C42;, &#x5E76;&#x5C06;&#x6700;&#x540E;&#x7684;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;&#x56DE;&#x6389;&#x5230;<code>okhttp3.Callback</code>&#x4E2D;</p>
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sendOkHttpRequestByGetMethod</span><span class="hljs-params">(String address, okhttp3.Callback callback)</span></span>{
+        OkHttpClient client = <span class="hljs-keyword">new</span> OkHttpClient();
+        Request request = <span class="hljs-keyword">new</span> Request.Builder()
+                .url(address)
+                .build();
+        client.newCall(request).enqueue(callback);
+    }
+</code></pre>
+<p>&#x8C03;&#x7528;</p>
+<pre><code class="lang-java"> btn_okhttpTest.setOnClickListener((view)-&gt;{
+ HttpUtil.sendOkHttpRequestByGetMethod(<span class="hljs-string">&quot;http://test2.aaronfang.fun/api/v1/postclass&quot;</span>, <span class="hljs-keyword">new</span> okhttp3.Callback() {
+                <span class="hljs-meta">@Override</span>
+                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onFailure</span><span class="hljs-params">(Call call, IOException e)</span> </span>{
+
+                }
+
+                <span class="hljs-meta">@Override</span>
+                <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onResponse</span><span class="hljs-params">(Call call, Response response)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+                    String responseData = response.body().string();
+                    Log.d(<span class="hljs-string">&quot;Okhttp test&quot;</span>, responseData);
+                    updateUI();
+                }
+            });
+        });
+</code></pre>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-04-23 17:07:06
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter8.md" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 第八章">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第九章 Android网络应用初步","level":"1.10","depth":1,"previous":{"title":"第八章","level":"1.9","depth":1,"path":"chapter8.md","ref":"./chapter8.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toc","fontsettings","tbfed-pagefooter","links","github","editlink","simple-page-toc"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/AaronFang123/Android_Notes"},"editlink":{"label":"编辑本页面","multilingual":false,"base":"https://github.com/AaronFang123/Android_Notes"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"family":"serif","size":12,"theme":"white"},"highlight":{},"links":{"gitbook":false,"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter9.md","mtime":"2020-04-23T09:07:06.454Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-23T09:08:00.166Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-links/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
