@@ -7,7 +7,8 @@
 * [第四章  fragment碎片](./chapter4.md)
 * [第五章 广播和广播接收器BroadCast Receiver](./chapter5.md)
 * [第六章 持久化存储](./chapter6.md)
-* [第七章](./chapter7.md)
+* [第七章 内容提供器](./chapter7.md) 
 * [第八章](./chapter8.md)
 * [第九章 Android网络应用初步](./chapter9.md)
+* [UI开发实录笔记](./note_else.md)
 

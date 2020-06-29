@@ -382,15 +382,15 @@ LitePal一种是使用关系映射模式管理数据库的工具
 
    其中` dbname`指数据库名
 
-   ​	`version`指版本
+   ​	`version`指版本，可以用于修改表结构后实现版本控制
 
-   `	list`指所有映射模型
+   `	list`指所有映射模型（待添加）
 
 4. AndroidManifest.xml
 
    ```xml
    <application
-                android:name="org.litepal.LitePalApplication"
+                android:name="org.litepal.LitePalApplication"/>
    ```
 
 #### 创建表
