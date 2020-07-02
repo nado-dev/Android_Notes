@@ -129,7 +129,7 @@ ContentResolver：用于访问内容提供器的工具, 可以通过Content中�
 Uri uri = Uri.prase("content://com.example.app/table");
 // 查询
 // uri:表名, projection:列名， selection：where, selectionArgs:where参数，sortOrder：orderBy
-Cursor cursor = getContent().getContentResover().query(
+Cursor cursor = getContentResover().query(
 	uri, projection, selection, selectionArgs, sortOrder);
 if(cursor != null){
     while(cursor.moveToNext()){

@@ -138,7 +138,7 @@ startActvity(intent);
     ```java
     // in a listener
     Intent intent = new Intent(Intent.ACTION_VIEW);//Intent.ACTION_VIEW 自带
-    intent,setData(Uri.prase("http://www.xxx.com"));
+    intent.setData(Uri.prase("http://www.xxx.com"));
     startActivity(intent);
     ```
 
@@ -155,7 +155,7 @@ intent.setData(Uri.prase("tel:10086"));
 startActivity(intent);
 ```
 
-`<data android:scheme:"tel">`只响应tel协议
+​	`<data android:scheme:"tel">`只响应tel协议
 
 #### 隐式Intent在活动之间传递信息
 

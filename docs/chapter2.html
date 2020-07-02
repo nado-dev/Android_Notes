@@ -206,7 +206,7 @@
                 <a href="chapter8.html">
             
                     
-                    第八章
+                    第八章 简单多媒体API及其运用
             
                 </a>
             
@@ -407,7 +407,7 @@ startActvity(intent);
 <li><p>&#x8C03;&#x7528;&#x7CFB;&#x7EDF;&#x6D4F;&#x89C8;&#x5668;&#x6253;&#x5F00;&#x7F51;&#x9875;</p>
 <pre><code class="lang-java"><span class="hljs-comment">// in a listener</span>
 Intent intent = <span class="hljs-keyword">new</span> Intent(Intent.ACTION_VIEW);<span class="hljs-comment">//Intent.ACTION_VIEW &#x81EA;&#x5E26;</span>
-intent,setData(Uri.prase(<span class="hljs-string">&quot;http://www.xxx.com&quot;</span>));
+intent.setData(Uri.prase(<span class="hljs-string">&quot;http://www.xxx.com&quot;</span>));
 startActivity(intent);
 </code></pre>
 <p>&#x4E5F;&#x53EF;&#x4EE5;&#x5728;<intetn-filter>&#x5185;&#x589E;&#x52A0;&#x66F4;&#x591A;&#x6807;&#x7B7E;&#x6EE1;&#x8DB3;&#x66F4;&#x7CBE;&#x786E;&#x7684;&#x9690;&#x5F0F;Intent</intetn-filter></p>
@@ -422,7 +422,7 @@ Intent intent = <span class="hljs-keyword">new</span> Intent(Intent.ACTION_DIAL)
 intent.setData(Uri.prase(<span class="hljs-string">&quot;tel:10086&quot;</span>));
 startActivity(intent);
 </code></pre>
-<p><code>&lt;data android:scheme:&quot;tel&quot;&gt;</code>&#x53EA;&#x54CD;&#x5E94;tel&#x534F;&#x8BAE;</p>
+<p>&#x200B;    <code>&lt;data android:scheme:&quot;tel&quot;&gt;</code>&#x53EA;&#x54CD;&#x5E94;tel&#x534F;&#x8BAE;</p>
 <h4 id="&#x9690;&#x5F0F;intent&#x5728;&#x6D3B;&#x52A8;&#x4E4B;&#x95F4;&#x4F20;&#x9012;&#x4FE1;&#x606F;">&#x9690;&#x5F0F;Intent&#x5728;&#x6D3B;&#x52A8;&#x4E4B;&#x95F4;&#x4F20;&#x9012;&#x4FE1;&#x606F;</h4>
 <h5 id="1&#x4F20;&#x9012;&#x6570;&#x636E;&#x7ED9;&#x4E0B;&#x4E00;&#x4E2A;&#x6D3B;&#x52A8;">1.&#x4F20;&#x9012;&#x6570;&#x636E;&#x7ED9;&#x4E0B;&#x4E00;&#x4E2A;&#x6D3B;&#x52A8;</h5>
 <p>&#x53D1;&#x9001;&#x65B9;:<code>intent.putExtra(&quot;key&quot;, value)</code></p>
@@ -528,7 +528,7 @@ finish();
 <li>singleInstance: &#x5355;&#x72EC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;&#x6808;&#x7BA1;&#x7406;&#x8BE5;&#x6D3B;&#x52A8;, &#x4E0D;&#x7BA1;&#x662F;&#x90A3;&#x4E2A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;&#x6D3B;&#x52A8;, &#x90FD;&#x5171;&#x7528;&#x8FD9;&#x4E2A;&#x8FD4;&#x56DE;&#x6808;, &#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x5171;&#x4EAB; </li>
 </ol>
 <footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-04-18 22:48:41
+2020-07-02 17:10:22
 </span></footer>
                                 
                                 </section>
@@ -572,7 +572,7 @@ finish();
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第二章 Activity的基本用法","level":"1.3","depth":1,"next":{"title":"第三章 布局Layout","level":"1.4","depth":1,"path":"chapter3.md","ref":"./chapter3.md","articles":[]},"previous":{"title":"第一章 Android与Android Studio","level":"1.2","depth":1,"path":"chapter1.md","ref":"./chapter1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toc","fontsettings","tbfed-pagefooter","links","github","editlink","simple-page-toc"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/AaronFang123/Android_Notes"},"editlink":{"label":"编辑本页面","multilingual":false,"base":"https://github.com/AaronFang123/Android_Notes/blob/master"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"family":"serif","size":12,"theme":"white"},"highlight":{},"links":{"gitbook":false,"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter2.md","mtime":"2020-04-18T14:48:41.641Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-01T08:42:02.149Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第二章 Activity的基本用法","level":"1.3","depth":1,"next":{"title":"第三章 布局Layout","level":"1.4","depth":1,"path":"chapter3.md","ref":"./chapter3.md","articles":[]},"previous":{"title":"第一章 Android与Android Studio","level":"1.2","depth":1,"path":"chapter1.md","ref":"./chapter1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toc","fontsettings","tbfed-pagefooter","links","github","editlink","simple-page-toc"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/AaronFang123/Android_Notes"},"editlink":{"label":"编辑本页面","multilingual":false,"base":"https://github.com/AaronFang123/Android_Notes/blob/master"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"family":"serif","size":12,"theme":"white"},"highlight":{},"links":{"gitbook":false,"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter2.md","mtime":"2020-07-02T09:10:22.934Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-02T09:40:38.720Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
