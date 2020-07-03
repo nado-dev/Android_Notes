@@ -1,8 +1,10 @@
-# Introduction
+# Android入门知识点总结和学习笔记
 
- Android入门知识点总结和学习笔记
+基于《第一行代码》 第二版 郭霖 
 
-基于《第一行代码》 第二版 郭霖
+请支持原作者[购买](https://item.jd.com/12012505.html)本书
 
-[点此](http://android.aaronfang.fun)浏览
+仅供个人学习、研究之用，请勿用于商业用途
+
+本内容依据“CC BY-SA 4.0”许可证进行授权。要查看该许可证，可访问https://creativecommons.org/licenses/by-sa/4.0/
 

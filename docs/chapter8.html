@@ -289,7 +289,8 @@
 <ul>
 <li><a href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E7%AE%80%E5%8D%95%E5%A4%9A%E5%AA%92%E4%BD%93api%E5%8F%8A%E5%85%B6%E8%BF%90%E7%94%A8">&#x7B2C;&#x516B;&#x7AE0; &#x7B80;&#x5355;&#x591A;&#x5A92;&#x4F53;API&#x53CA;&#x5176;&#x8FD0;&#x7528;</a><ul>
 <li><a href="#one-%E9%80%9A%E7%9F%A5notification">:one: &#x901A;&#x77E5;Notification</a></li>
-<li><a href="#two-%E6%91%84%E5%83%8F%E5%A4%B4%E5%92%8C%E7%9B%B8%E5%86%8C">:two: &#x6444;&#x50CF;&#x5934;&#x548C;&#x76F8;&#x518C;</a></li>
+<li><a href="#two-%E6%91%84%E5%83%8F%E5%A4%B4">:two: &#x6444;&#x50CF;&#x5934;</a></li>
+<li><a href="#three-%E7%9B%B8%E5%86%8C">:three: &#x76F8;&#x518C;</a></li>
 </ul>
 </li>
 </ul>
@@ -391,9 +392,261 @@
 <p>PRIORITY_MIN: &#x53EA;&#x5728;&#x7279;&#x5B9A;&#x7684;&#x573A;&#x5408;&#x51FA;&#x73B0;&#xFF0C;&#x5982;&#x4E0B;&#x62C9;&#x72B6;&#x6001;&#x680F;&#x65F6;</p>
 <p>PRIORITY_LOW: &#x76F8;&#x5BF9;&#x4E0D;&#x91CD;&#x8981;&#xFF0C;&#x987A;&#x5E8F;&#x8F83;&#x4F4E;</p>
 <p>PRIORITY_MAX: &#x6700;&#x91CD;&#x8981;</p>
-<h3 id="two-&#x6444;&#x50CF;&#x5934;&#x548C;&#x76F8;&#x518C;">:two: &#x6444;&#x50CF;&#x5934;&#x548C;&#x76F8;&#x518C;</h3>
-<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-07-02 17:03:37
+<h3 id="two-&#x6444;&#x50CF;&#x5934;">:two: &#x6444;&#x50CF;&#x5934;</h3>
+<p>Demo</p>
+<ol>
+<li><p>&#x521B;&#x5EFA;File&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x628A;&#x5B83;&#x7684;&#x76EE;&#x5F55;&#x8BBE;&#x7F6E;&#x4E3A;<strong>&#x5E94;&#x7528;&#x5173;&#x8054;&#x7F13;&#x5B58;&#x76EE;&#x5F55;</strong>&#xFF0C;&#x6307;SDcard&#x4E2D;&#x4E13;&#x95E8;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x5F53;&#x524D;&#x5E94;&#x7528;&#x7F13;&#x5B58;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x901A;&#x8FC7;&#x8C03;&#x7528;<code>getExternalCacheDir()</code>&#x83B7;&#x53D6;&#x3002;</p>
+<blockquote>
+<p>SDK 24 &#xFF08;Android 6.0 &#xFF09;&#x540E;&#x5B58;&#x653E;&#x6587;&#x4EF6;&#x8FDB;&#x5165;SDcard&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x4E00;&#x4E2A;&#x5371;&#x9669;&#x6743;&#x9650;&#xFF0C;&#x9700;&#x8981;&#x7533;&#x8BF7;&#x8FD0;&#x884C;&#x65F6;&#x6743;&#x9650;&#xFF0C;&#x5B58;&#x653E;&#x8FDB;&#x5E94;&#x7528;&#x5173;&#x8054;&#x7F13;&#x5B58;&#x76EE;&#x5F55;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x8FD9;&#x6B65;</p>
+</blockquote>
+</li>
+<li><p>&#x5982;&#x679C;&#x65F6;SDK 24&#x4E4B;&#x524D;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5C06;File&#x6587;&#x4EF6;&#x8F6C;&#x4E3A;Uri&#x5BF9;&#x8C61;<code>Uri.fromFile(File file)</code>&#xFF0C;&#x8FD9;&#x6837;&#x7684;Uri&#x8868;&#x793A;&#x7740;&#x771F;&#x5B9E;&#x8DEF;&#x5F84;</p>
+<p>&#x5982;&#x5728;SDK 24&#x540E;&#xFF08;&#x542B;24&#xFF09;&#xFF0C;&#x9700;&#x8981;&#x8C03;&#x7528;FileProvider&#x7684;<code>getUriForFile(Context context, String authority, File file)</code>, &#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;&#x552F;&#x4E00;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<blockquote>
+<p>FileProvider&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x6027;&#x5730;&#x63D0;&#x4F9B;&#x5C01;&#x88C5;&#x8FC7;&#x7684;Uri&#xFF0C;&#x63D0;&#x9AD8;&#x5B89;&#x5168;&#x6027;</p>
+</blockquote>
+</li>
+<li><p>Intent&#x542F;&#x52A8;&#x76F8;&#x673A;&#xFF0C;&#x5C06;Action&#x6307;&#x5B9A;&#x4E3A;<code>&quot;android.media.action.IMAGE_CAPTURE&quot;</code></p>
+<p>&#x5728;&#x5411;Intent&#x4F20;&#x5165;&#x4FDD;&#x5B58;&#x7684;&#x5730;&#x5740; <code>intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);</code></p>
+</li>
+<li><p>&#x542F;&#x52A8;&#x6D3B;&#x52A8;&#xFF0C;&#x56E0;&#x4E3A;&#x9700;&#x8981;&#x56DE;&#x8C03;&#x6240;&#x4EE5;&#x8981;&#x4F7F;&#x7528;<code>startActivityForResult(Intent intent)</code>&#x65B9;&#x6CD5;</p>
+</li>
+<li>&#x5728;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;onActivityResult&#x4E2D;&#xFF0C;&#x5C06;&#x6587;&#x4EF6;&#x89E3;&#x6790;&#x4E3A;Bitmap&#xFF0C;&#x5C55;&#x793A;&#x5230;ImageView&#x4E2D;</li>
+</ol>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CamActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AppCompatActivity</span> </span>{
+    <span class="hljs-keyword">private</span> ImageView imageView;
+    <span class="hljs-keyword">private</span> Button button;
+    <span class="hljs-keyword">private</span> Uri imageUri;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cam);
+
+        imageView = findViewById(R.id.imageView_pic);
+        button    = findViewById(R.id.button_pic);
+
+        button.setOnClickListener(v-&gt;{
+            File outputImage = <span class="hljs-keyword">new</span> File(getExternalCacheDir(), <span class="hljs-string">&quot;out_image.jpg&quot;</span>);
+            <span class="hljs-keyword">try</span>{
+                <span class="hljs-keyword">if</span> (outputImage.exists()){
+                    outputImage.delete();
+                }
+                outputImage.createNewFile();
+            }<span class="hljs-keyword">catch</span> (Exception e){
+                e.printStackTrace();
+            }
+            <span class="hljs-keyword">if</span> (Build.VERSION.SDK_INT &gt;=<span class="hljs-number">24</span>){
+                imageUri = FileProvider.getUriForFile(CamActivity.<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;com.example.sqlite_demo.fileprovider&quot;</span>,outputImage);
+            }
+            <span class="hljs-keyword">else</span>{
+                imageUri = Uri.fromFile(outputImage);
+            }
+            <span class="hljs-comment">// &#x542F;&#x52A8;&#x76F8;&#x673A;</span>
+            Intent intent = <span class="hljs-keyword">new</span> Intent(<span class="hljs-string">&quot;android.media.action.IMAGE_CAPTURE&quot;</span>);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+            startActivityForResult(intent,<span class="hljs-number">1</span>);
+        });
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onActivityResult</span><span class="hljs-params">(<span class="hljs-keyword">int</span> requestCode, <span class="hljs-keyword">int</span> resultCode, @Nullable Intent data)</span> </span>{
+        <span class="hljs-keyword">if</span> (requestCode == <span class="hljs-number">1</span>) {
+            <span class="hljs-keyword">if</span> (resultCode == RESULT_OK) {
+                <span class="hljs-keyword">try</span> {
+                    Bitmap bitmap = BitmapFactory.decodeStream(getContentResolver().openInputStream(imageUri));
+                    imageView.setImageBitmap(bitmap);
+                } <span class="hljs-keyword">catch</span> (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<ol>
+<li>&#x8BBE;&#x7F6E;manifest.xml provider</li>
+</ol>
+<p>manifest.xml</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">provider</span>
+            <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;androidx.core.content.FileProvider&quot;</span>
+            <span class="hljs-attr">android:authorities</span>=<span class="hljs-string">&quot;com.example.sqlite_demo.fileprovider&quot;</span>
+            <span class="hljs-attr">android:exported</span>=<span class="hljs-string">&quot;false&quot;</span>
+            <span class="hljs-attr">android:grantUriPermissions</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">meta-data</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.support.FILE_PROVIDER_PATHS&quot;</span>
+                <span class="hljs-attr">android:resource</span>=<span class="hljs-string">&quot;@xml/file_paths&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">provider</span>&gt;</span>
+</code></pre>
+<p>android:authorities &#x7684;&#x503C;&#x4E0E;FileProvider.getUriForFile&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x76F8;&#x540C;</p>
+<ol>
+<li>&#x8BBE;&#x7F6E;&#x5171;&#x4EAB;&#x5BF9;&#x8C61;</li>
+</ol>
+<p><meta-data> &#x4E2D;&#x6307;&#x5B9A;Uri&#x7684;&#x5171;&#x4EAB;&#x8DEF;&#x5F84;&#xFF0C;&#x65B0;&#x5EFA;res/xml&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x65B0;&#x5EFA;&#x6587;&#x4EF6;file_paths.xml</meta-data></p>
+<p>file_paths.xml</p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">paths</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">external-path</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;my_images&quot;</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">paths</span>&gt;</span>
+</code></pre>
+<p>name&#x968F;&#x610F;</p>
+<p>path&#x7684;&#x503C;&#x8868;&#x793A;&#x9700;&#x8981;&#x8D21;&#x732E;&#x7684;&#x8DEF;&#x5F84;&#xFF08;&#x8303;&#x56F4;&#xFF09;&#x8BBE;&#x7F6E;&#x4E3A;&#x7A7A;&#x503C;&#x8868;&#x793A;&#x5171;&#x4EAB;&#x6574;&#x4E2A;SD&#x5361;&#xFF08;&#x4E0D;&#x63A8;&#x8350;&#xFF09;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x53EA;&#x5171;&#x4EAB;&#x8FD9;&#x5F20;&#x56FE;&#x7247;&#x7684;&#x8DEF;&#x5F84;</p>
+<h3 id="three-&#x76F8;&#x518C;">:three: &#x76F8;&#x518C;</h3>
+<p>GalleryActivity.java</p>
+<ol>
+<li><p>&#x7533;&#x8BF7;&#x8FD0;&#x884C;&#x65F6;&#x6743;&#x9650;READ_EXTERNAL_STORAGE</p>
+</li>
+<li><p>Intent &#x83B7;&#x53D6;&#x672C;&#x5730;&#x56FE;&#x7247;</p>
+<pre><code class="lang-java">Intent intent = <span class="hljs-keyword">new</span> Intent(Intent.ACTION_GET_CONTENT);
+intent.setType(<span class="hljs-string">&quot;image/*&quot;</span>);
+tartActivityForResult(intent,CHOOSE_PHOTO);
+</code></pre>
+<blockquote>
+<p><code>Intent.ACTION_GET_CONTENT</code>&#x83B7;&#x53D6;&#x7684;&#x662F;&#x6240;&#x6709;&#x672C;&#x5730;&#x56FE;&#x7247;&#xFF0C; <code>Intent.ACTION_PICK</code>&#x83B7;&#x53D6;&#x7684;&#x662F;&#x76F8;&#x518C;&#x4E2D;&#x7684;&#x56FE;&#x7247;&#x3002;</p>
+<pre><code class="lang-java">Intent intent = <span class="hljs-keyword">new</span> Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+intent.setType(<span class="hljs-string">&quot;image/*&quot;</span>);
+startActivityForResult(intent, REQUEST_CODE_ALBUM);
+</code></pre>
+<p>Intent.ACTION_PICK&#x8FD4;&#x56DE;&#x7684;uri&#x683C;&#x5F0F;&#x53EA;&#x6709;&#x4E00;&#x79CD;&#xFF1A;&#x6BD4;&#x5982;
+uri=content://media/external/images/media/34&#xFF1B;</p>
+<p>&#x800C;Intent.ACTION_GET_CONTENT&#x8FD4;&#x56DE;&#x7684;uri&#x683C;&#x5F0F;&#xFF1A;</p>
+<p>&#x5728;Android&#x7248;&#x672C;4.4&#x4EE5;&#x4E0B;&#x540C;Intent.ACTION_PICK&#x8FD4;&#x56DE;&#x7684;&#x4E00; &#x6837;&#xFF0C;</p>
+<p>Android&#x7248;&#x672C;4.4&#x4EE5;&#x4E0A;&#x5219;&#x8FD4;&#x56DE;&#x591A;&#x79CD;&#x683C;&#x5F0F;&#xFF1A;&#x5982;
+uri=content://com.android.providers.media.documents/document/image%3A245743&#xFF0C;
+uri=file:///storage/emulated/0/temp_photo.jpg&#xFF0C;
+uri=content://media/external/images/media/193968
+&#x2026;</p>
+<p>Intent.ACTION_GET_CONTENT&#x5FC5;&#x987B;&#x8BBE;&#x7F6E;setType(&quot;image/*&quot;)&#x8868;&#x793A;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x62A5;
+android.content.ActivityNotFoundException&#x5F02;&#x5E38;&#x3002;</p>
+<hr>
+<p><a href="https://blog.csdn.net/chengfu116/article/details/74923161" target="_blank">&#x53C2;&#x8003; CSDN &#x535A;&#x4E3B;&#x300C;CoderCF&#x300D;</a></p>
+</blockquote>
+</li>
+<li><p>&#x5BF9;&#x4E8E;KitKat&#x4EE5;&#x4E0A;&#x7684;&#x7248;&#x672C;&#xFF0C;&#x7531;&#x4E8E;&#x8FD4;&#x56DE;&#x7684;&#x683C;&#x5F0F;&#x4E0D;&#x540C;&#xFF0C;&#x8981;&#x505A;&#x4E0D;&#x540C;&#x7684;&#x9002;&#x914D;</p>
+<p>&#x5BF9;&#x4E8E;Document&#x7C7B;&#x578B;&#xFF1A;</p>
+<ul>
+<li>authority&#x4E3A;media&#x683C;&#x5F0F;&#xFF1A;&#x5982;content://media/external/images/media/193968&#xFF0C;&#x9700;&#x8981;&#x622A;&#x53D6;&#x51FA;&#x6700;&#x540E;&#x7684;id&#xFF0C;&#x6784;&#x9020;&#x51FA;selection&#xFF08;&#x5373;where&#x8BED;&#x53E5;&#xFF09;&#xFF0C;&#x628A;MediaStore.Images.Media.EXTERNAL_CONTENT_URI&#x4E0E;selection&#x7ED3;&#x5408;&#x8FDB;&#x884C;&#x67E5;&#x627E;</li>
+<li>download&#x683C;&#x5F0F;&#x9700;&#x8981;&#x6784;&#x9020;content://downloads/public_downloads + docId&#x7684;&#x5F62;&#x5F0F;&#x7684;Uri&#x8FDB;&#x884C;&#x67E5;&#x627E;</li>
+</ul>
+<p>&#x5BF9;&#x4E8E;content&#x7C7B;&#x578B;uri&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x67E5;&#x627E;</p>
+<p>&#x5BF9;&#x4E8E;file&#x7C7B;&#x578B;getPath()&#x5373;&#x53EF;&#xFF0C;&#x65E0;&#x9700;&#x67E5;&#x627E;</p>
+</li>
+<li><p>&#x5C06;&#x56FE;&#x7247;&#x8DEF;&#x5F84;&#x8F6C;&#x4E3A;Bitmap&#xFF0C;&#x7ED8;&#x5236;&#x5373;&#x53EF;</p>
+<blockquote>
+<p>Android 10(API &gt;= 29) &#x7981;&#x6B62;&#x4E86;&#x901A;&#x8FC7;&#x8DEF;&#x5F84;&#x6765;&#x8BBF;&#x95EE;&#x5176;&#x4ED6;&#x7A0B;&#x5E8F;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x53EF;&#x4EE5;&#x6682;&#x65F6;&#x505C;&#x7528;&#x8FD9;&#x4E2A;feature&#x4EE5;&#x5B9E;&#x73B0;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x5728;manifest.xml&#x4E2D;&#xFF0C;&#x8BBE;&#x7F6E;requestLegacyExternalStorage=&quot;true&quot;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">manifest</span> <span class="hljs-attr">...</span> &gt;</span>
+<span class="hljs-comment">&lt;!-- This attribute is &quot;false&quot; by default on apps targeting Android 10 or higher. --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">application</span> <span class="hljs-attr">android:requestLegacyExternalStorage</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">...</span> &gt;</span>
+        ...
+    <span class="hljs-tag">&lt;/<span class="hljs-name">application</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">manifest</span>&gt;</span>
+</code></pre>
+<p><a href="https://developer.android.google.cn/training/data-storage/files/external-scoped" target="_blank">&#x4E86;&#x89E3;&#x66F4;&#x591A;</a></p>
+</blockquote>
+</li>
+</ol>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GalleryActivity</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AppCompatActivity</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> CHOOSE_PHOTO = <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">private</span> Button btn_gly;
+    <span class="hljs-keyword">private</span> ImageView img_gly;
+
+    <span class="hljs-meta">@RequiresApi</span>(api = Build.VERSION_CODES.JELLY_BEAN)
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCreate</span><span class="hljs-params">(Bundle savedInstanceState)</span> </span>{
+        <span class="hljs-keyword">super</span>.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_gallery);
+        btn_gly = findViewById(R.id.button_gly);
+        img_gly = findViewById(R.id.imageView_gly);
+
+        btn_gly.setOnClickListener(v-&gt;{
+            <span class="hljs-keyword">int</span> currentPermission = ContextCompat.checkSelfPermission(GalleryActivity.<span class="hljs-keyword">this</span>, Manifest.permission.READ_EXTERNAL_STORAGE);
+            <span class="hljs-keyword">int</span> grantResult = PackageManager.PERMISSION_GRANTED;
+            <span class="hljs-keyword">if</span> (currentPermission != grantResult){
+                ActivityCompat.requestPermissions(GalleryActivity.<span class="hljs-keyword">this</span>, <span class="hljs-keyword">new</span> String[]{Manifest.permission.READ_EXTERNAL_STORAGE},<span class="hljs-number">1</span>);
+            }
+            <span class="hljs-keyword">else</span>{
+                openGallery();
+            }
+        });
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">openGallery</span><span class="hljs-params">()</span> </span>{
+        Intent intent = <span class="hljs-keyword">new</span> Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType(<span class="hljs-string">&quot;image/*&quot;</span>);
+        startActivityForResult(intent,CHOOSE_PHOTO);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onRequestPermissionsResult</span><span class="hljs-params">(<span class="hljs-keyword">int</span> requestCode, @NonNull String[] permissions, @NonNull <span class="hljs-keyword">int</span>[] grantResults)</span> </span>{
+        <span class="hljs-keyword">if</span> (requestCode == <span class="hljs-number">1</span>){
+            <span class="hljs-keyword">if</span> (grantResults.length &gt; <span class="hljs-number">0</span> &amp;&amp; grantResults[<span class="hljs-number">0</span>] == PackageManager.PERMISSION_GRANTED){
+                openGallery();
+            }
+            <span class="hljs-keyword">else</span>{
+                Toast.makeText(<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;permission grant Failed&quot;</span>,Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onActivityResult</span><span class="hljs-params">(<span class="hljs-keyword">int</span> requestCode, <span class="hljs-keyword">int</span> resultCode, Intent data)</span> </span>{
+        <span class="hljs-keyword">if</span> (requestCode == CHOOSE_PHOTO){
+            <span class="hljs-keyword">if</span> (resultCode == RESULT_OK){
+                <span class="hljs-keyword">if</span> (Build.VERSION.SDK_INT &gt;= <span class="hljs-number">19</span>){
+                    handleImageOnKitKat(data);
+                }
+                <span class="hljs-keyword">else</span>{
+                    handleImageBeforeKitKat(data);
+                }
+            }
+        }
+    }
+
+    <span class="hljs-meta">@TargetApi</span>(<span class="hljs-number">19</span>)
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleImageOnKitKat</span><span class="hljs-params">(Intent data)</span> </span>{
+        String imagePath = <span class="hljs-keyword">null</span>;
+        Uri uri = data.getData();
+        <span class="hljs-comment">// &#x5982;&#x679C;&#x662F;Document&#x7C7B;&#x578B;&#x7684;Uri</span>
+        <span class="hljs-keyword">if</span> (DocumentsContract.isDocumentUri(<span class="hljs-keyword">this</span>, uri)){
+            String docId = DocumentsContract.getDocumentId(uri);
+            <span class="hljs-keyword">if</span> (uri != <span class="hljs-keyword">null</span> &amp;&amp; <span class="hljs-string">&quot;com.android.providers.media.documents&quot;</span>.equals(uri.getAuthority())) {
+                String id = docId.split(<span class="hljs-string">&quot;:&quot;</span>)[<span class="hljs-number">1</span>];
+                Log.d(<span class="hljs-string">&quot;ID&quot;</span>,id);
+                String selection = MediaStore.Images.Media._ID + <span class="hljs-string">&quot;=&quot;</span> + id;
+                imagePath = getImagePath(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, selection);
+            }
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(uri != <span class="hljs-keyword">null</span> &amp;&amp; <span class="hljs-string">&quot;com.android.providers.downloads.documents&quot;</span>.equals(uri.getAuthority())){
+                Uri contentUri = ContentUris.withAppendedId(Uri.parse(<span class="hljs-string">&quot;content://downloads/public_downloads&quot;</span>), Long.valueOf(docId));
+                imagePath = getImagePath(contentUri, <span class="hljs-keyword">null</span>);
+            }
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (uri != <span class="hljs-keyword">null</span> &amp;&amp;<span class="hljs-string">&quot;content&quot;</span>.equalsIgnoreCase(uri.getScheme())){
+            imagePath = getImagePath(uri, <span class="hljs-keyword">null</span>);
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (uri != <span class="hljs-keyword">null</span> &amp;&amp; <span class="hljs-string">&quot;file&quot;</span>.equalsIgnoreCase(uri.getScheme())){
+            imagePath = uri.getPath();
+        }
+        displayPic(imagePath);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">displayPic</span><span class="hljs-params">(String imagePath)</span> </span>{
+        <span class="hljs-keyword">if</span> (imagePath != <span class="hljs-keyword">null</span>){
+            Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
+            img_gly.setImageBitmap(bitmap);
+        }
+        <span class="hljs-keyword">else</span>{
+            Toast.makeText(<span class="hljs-keyword">this</span>, <span class="hljs-string">&quot;failed&quot;</span>, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleImageBeforeKitKat</span><span class="hljs-params">(Intent data)</span> </span>{
+        Uri uri = data.getData();
+        String imagePath = getImagePath(uri, <span class="hljs-keyword">null</span>);
+        displayPic(imagePath);
+    }
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; By CC BY-SA 4.0 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2020-07-03 16:22:33
 </span></footer>
                                 
                                 </section>
@@ -437,7 +690,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第八章 简单多媒体API及其运用","level":"1.9","depth":1,"next":{"title":"第九章 Android网络应用初步","level":"1.10","depth":1,"path":"chapter9.md","ref":"./chapter9.md","articles":[]},"previous":{"title":"第七章 内容提供器","level":"1.8","depth":1,"path":"chapter7.md","ref":"./chapter7.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toc","fontsettings","tbfed-pagefooter","links","github","editlink","simple-page-toc"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/AaronFang123/Android_Notes"},"editlink":{"label":"编辑本页面","multilingual":false,"base":"https://github.com/AaronFang123/Android_Notes/blob/master"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"family":"serif","size":12,"theme":"white"},"highlight":{},"links":{"gitbook":false,"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter8.md","mtime":"2020-07-02T09:03:37.387Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-02T09:40:38.720Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第八章 简单多媒体API及其运用","level":"1.9","depth":1,"next":{"title":"第九章 Android网络应用初步","level":"1.10","depth":1,"path":"chapter9.md","ref":"./chapter9.md","articles":[]},"previous":{"title":"第七章 内容提供器","level":"1.8","depth":1,"path":"chapter7.md","ref":"./chapter7.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toc","fontsettings","tbfed-pagefooter","links","github","editlink","simple-page-toc"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &#169; By CC BY-SA 4.0","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/AaronFang123/Android_Notes"},"editlink":{"label":"编辑本页面","multilingual":false,"base":"https://github.com/AaronFang123/Android_Notes/blob/master"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"toc":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"family":"serif","size":12,"theme":"white"},"highlight":{},"links":{"gitbook":false,"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter8.md","mtime":"2020-07-03T08:22:33.092Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-03T08:48:37.983Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
