@@ -283,7 +283,6 @@ GalleryActivity.java
    > Intent.ACTION_GET_CONTENT必须设置setType("image/*")表示返回的数据类型，否则会报
    > android.content.ActivityNotFoundException异常。
    >
-   > ------------------------------------------------
    > [参考 CSDN 博主「CoderCF」](https://blog.csdn.net/chengfu116/article/details/74923161)
    
 3. 对于KitKat以上的版本，由于返回的格式不同，要做不同的适配

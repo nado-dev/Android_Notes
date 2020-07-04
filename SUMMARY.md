@@ -10,5 +10,7 @@
 * [第七章 内容提供器](./chapter7.md) 
 * [第八章 简单多媒体API及其运用](./chapter8.md)
 * [第九章 Android网络应用初步](./chapter9.md)
+* [第十章 -1 Android多线程编程](./chapter10-1.md)
+* [第十章 -2  服务](./chapter10-2.md)
 * [UI开发实录笔记](./note_else.md)
 
