@@ -234,6 +234,6 @@ public class ThreadActivity extends AppCompatActivity {
   ```
 
   
-
-
+  
+  关于[RandomAccessFile](https://blog.csdn.net/dimudan2015/article/details/81910690?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase)
 
