@@ -245,7 +245,7 @@ onDestroy()
 只需在**服务里的onCreate方法**里添加如下语句：
 
 ```java
- public void onCreate() {
+ 	public void onCreate() {
         super.onCreate();
         Log.d("MyService", "onCreate");
         Intent intent = new Intent(this, ServiceActivity.class);
@@ -286,7 +286,7 @@ public int onStartCommand(Intent intent, int flags, int startId) {
 MyIntentService.java
 
 ```java
-public class MyIntentService extends IntentService {
+	public class MyIntentService extends IntentService {
 
     /**
      * Creates an IntentService.  Invoked by your subclass's constructor.
@@ -320,345 +320,349 @@ public class MyIntentService extends IntentService {
 
 ### 实例 下载
 
-1. 定义回调接口
+:one:定义回调接口
 
-   DownloadListener.java
+DownloadListener.java
 
-   ```java
-   package com.example.sqlite_demo.Interface;
-   
-   /**
-    * 下载回调接口
-    * 用于监听各种状态的监听和回调
-    */
-   public interface DownloadListener {
-   
-       /**
-        * 进度百分比回调方法
-        * @param progress 进度(0-100)
-        */
-       void onProgress(int progress);
-   
-       /**
-        * 成功回调方法
-        */
-       void onSuccess();
-   
-       /**
-        * 失败回调接口
-        */
-       void onFailed();
-   
-       /**
-        * 暂停回调方法
-        */
-       void onPause();
-   
-       /**
-        * 取消回调方法
-        */
-       void onCanceled();
-   }
-   
-   
-   ```
+```java
 
-2. 下载功能 线程 AsyncTask
+package com.example.sqlite_demo.Interface;
 
-   DownTask.java
+/**
+ * 下载回调接口
+ * 用于监听各种状态的监听和回调
+ */
+public interface DownloadListener {
 
-   ```java
-   public class DownloadTask extends AsyncTask<String, Integer, Integer> {
-       private static final int TYPE_SUCCESS = 0;
-       private static final int TYPE_FAILED = 1;
-       private static final int TYPE_PAUSED = 2;
-       private static final int TYPE_CANCELED = 3;
-   
-       private DownloadListener downloadListener;
-       private boolean isCancel;
-       private boolean isPause;
-       private int lastProgress;
-   
-       public DownloadTask(DownloadListener downloadListener) {
-           this.downloadListener = downloadListener;
-       }
-   
-       public void setPause(boolean pause) {
-           isPause = pause;
-       }
-   
-       public void setCancel(boolean cancel) {
-           isCancel = cancel;
-       }
-   
-       @Override
-       protected Integer doInBackground(String... strings) {
-           InputStream inputStream = null;
-           RandomAccessFile savedFile = null;
-           File file = null;
-           try{
-               // 已下载的文件长度
-               long downloadedLength = 0;
-               String downloadURL = strings[0];
-               String[] subStrings = downloadURL.split("/");
-               String fileName =subStrings[subStrings.length-1];
-               String directory = MyApp.getContext().getApplicationContext().getFilesDir().getAbsolutePath();
-               file = new File(directory+ fileName);
-               Log.d("DS",directory);
-               Log.d("DS",fileName);
-               if (file.exists()){
-                   boolean isDeleted = file.delete();
-                   downloadedLength = file.length();
-               }
-               long contentLength = getContentLength(downloadURL);
-               if (contentLength == 0){
-                   // 下载失败
-                   return TYPE_FAILED;
-               }else if(contentLength == downloadedLength){
-                   // 下载成功
-                   return TYPE_SUCCESS;
-               }
-               // 网络操作
-               OkHttpClient client = new OkHttpClient();
-               Request request = new Request.Builder()
-                       // 支持断点下载
-                       .addHeader("RANGE", "bytes="+ downloadedLength +"-")
-                       .url(downloadURL)
-                       .build();
-               Response response = client.newCall(request).execute();
-               if (response.body() != null) {
-                   inputStream = response.body().byteStream();
-                   savedFile = new RandomAccessFile(file, "rw");
-                   // 跳过已经下载的字节
-                   savedFile.seek(downloadedLength);
-                   byte[] buf = new byte[1024];
-                   int total = 0;
-                   int len;
-                   // 正在下载
-                   while ((len = inputStream.read(buf)) != -1){
-                       if(isCancel)    return TYPE_CANCELED;
-                       else if(isPause)    return TYPE_PAUSED;
-                       else{
-                           total += len;
-                           savedFile.write(buf, 0, len);
-                           // 计算已经下载的百分比
-                           int progress = (int)((total+downloadedLength) * 100 / contentLength);
-                           publishProgress(progress);
-                       }
-                   }
-                   response.body().close();
-                   return TYPE_SUCCESS;
-               }
-           }catch (Exception e){
-               e.printStackTrace();
-           }finally {
-               if (inputStream != null) {
-                   try {
-                       inputStream.close();
-                   } catch (IOException e) {
-                       e.printStackTrace();
-                   }
-               }
-               if (savedFile != null){
-                   try {
-                       savedFile.close();
-                   } catch (IOException e) {
-                       e.printStackTrace();
-                   }
-               }
-               if (isCancel && file != null){
-                   boolean delete = file.delete();
-               }
-           }
-           return TYPE_FAILED;
-       }
-   
-       private long getContentLength(String downloadURL) throws IOException {
-           OkHttpClient client = new OkHttpClient();
-           Request request = new Request.Builder()
-                   .url(downloadURL)
-                   .build();
-           Response response = client.newCall(request).execute();
-           if (response.body() != null && response.isSuccessful()){
-               long contentLength = response.body().contentLength();
-               response.body().close();
-               return contentLength;
-           }
-           return 0;
-       }
-   
-   
-       @Override
-       protected void onPostExecute(Integer integer) {
-           switch (integer){
-               case TYPE_SUCCESS:
-                   downloadListener.onSuccess();
-                   break;
-               case TYPE_FAILED:
-                   downloadListener.onFailed();
-                   break;
-               case TYPE_PAUSED:
-                   downloadListener.onPause();
-                   break;
-               case TYPE_CANCELED:
-                   downloadListener.onCanceled();
-                   break;
-               default:
-                   break;
-           }
-       }
-   
-       @Override
-       protected void onProgressUpdate(Integer... values) {
-           int progress = values[0];
-           if (progress > lastProgress){
-               downloadListener.onProgress(progress);
-               lastProgress = progress;
-           }
-       }
-   
-       @Override
-       protected void onCancelled(Integer integer) {
-           super.onCancelled(integer);
-       }
-   }
-   
-   ```
+    /**
+     * 进度百分比回调方法
+     * @param progress 进度(0-100)
+     */
+    void onProgress(int progress);
 
-3. 服务DownloadService
+    /**
+     * 成功回调方法
+     */
+    void onSuccess();
 
-   DownloadService.java
+    /**
+     * 失败回调接口
+     */
+    void onFailed();
 
-   ```java
-   public class DownloadService extends Service {
-       private DownloadTask downloadTask;
-       private String downloadURL;
-       private DownloadListener downloadListener = new DownloadListener() {
-           @Override
-           public void onProgress(int progress) {
-               getNotificationManager().notify(1,getNotification("Downloading...", progress));
-           }
-   
-           @Override
-           public void onSuccess() {
-               downloadTask = null;
-               stopForeground(true);
-               getNotificationManager().notify(1,getNotification("Download Success", -1));
-               Toast.makeText(DownloadService.this,"Download Success", Toast.LENGTH_SHORT).show();
-           }
-   
-           @Override
-           public void onFailed() {
-               downloadTask = null;
-               stopForeground(true);
-               getNotificationManager().notify(1,getNotification("Download Failed", -1));
-               Toast.makeText(DownloadService.this,"Download Failed", Toast.LENGTH_SHORT).show();
-           }
-   
-           @Override
-           public void onPause() {
-               downloadTask = null;
-               Toast.makeText(DownloadService.this,"Download Paused", Toast.LENGTH_SHORT).show();
-           }
-   
-           @Override
-           public void onCanceled() {
-               downloadTask = null;
-               stopForeground(true);
-               Toast.makeText(DownloadService.this,"Download Canceled", Toast.LENGTH_SHORT).show();
-           }
-       } ;
-       private DownloadBinder mBinder = new DownloadBinder();
-   
-       private NotificationManager getNotificationManager(){
-           return (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-       }
-   
-       private Notification getNotification(String title, int progress) {
-           Intent intent = new Intent(this, ServiceActivity.class);
-           PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent,0);
-           NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"default");
-           builder.setSmallIcon(R.mipmap.ic_launcher_round);
-           builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
-           builder.setContentIntent(pendingIntent);
-           builder.setContentTitle(title);
-           if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-               builder.setPriority(Notification.PRIORITY_MAX);
-           }
-           if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-     //修改安卓8.1以上系统报错
-           NotificationChannel notificationChannel = new NotificationChannel("xxx", "xxx",NotificationManager.IMPORTANCE_MIN);
-           notificationChannel.enableLights(false);//如果使用中的设备支持通知灯，则说明此通知通道是否应显示灯
-           notificationChannel.setShowBadge(false);//是否显示角标
-           notificationChannel.setLockscreenVisibility(Notification.VISIBILITY_SECRET);
-           notificationChannel.setImportance(NotificationManager.IMPORTANCE_HIGH);
-           NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-               if (manager != null) {
-                   manager.createNotificationChannel(notificationChannel);
-               }
-               builder.setChannelId("xxx");
-     }
-   
-           if (progress >= 0){
-               builder.setContentText(progress + "%");
-               builder.setProgress(100, progress, false);
-           }
-           return builder.build();
-       }
-   
-       public DownloadService() {
-       }
-   
-       @Override
-       public IBinder onBind(Intent intent) {
-           // TODO: Return the communication channel to the service.
-           return  mBinder;
-       }
-   
-       public class DownloadBinder extends Binder {
-           public void startDownload(String url){
-               if (downloadTask == null){
-                   downloadURL = url;
-                   downloadTask = new DownloadTask(downloadListener);
-                   downloadTask.execute(downloadURL);
-                   startForeground(1, getNotification("Downloading...", 0));
-                   Toast.makeText(DownloadService.this, "Downloading...",Toast.LENGTH_SHORT).show();
-               }
-           }
-           public void pauseDownload(){
-               if (downloadTask != null){
-                   downloadTask.setPause(true);
-               }
-           }
-   
-           public void cancelDownload(){
-               if (downloadTask != null){
-                   downloadTask.setCancel(true);
-               }
-               if (downloadURL != null){
-                   // 取消下载是需要删除文件，并关闭通知
-                   String fileName = downloadURL.substring(downloadURL.lastIndexOf("/"));
-                   String directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
-                   File file = new File(directory+fileName);
-                   if (file.exists()){
-                       boolean isDeleted = file.delete();
-                   }
-                   getNotificationManager().cancel(1);
-                   stopForeground(true);
-                   Toast.makeText(DownloadService.this, "Canceled", Toast.LENGTH_SHORT).show();
-               }
-           }
-       }
-   }
-   
-   ```
+    /**
+     * 暂停回调方法
+     */
+    void onPause();
 
-4. 活动控制
+    /**
+     * 取消回调方法
+     */
+    void onCanceled();
+}
+
+```
+
+:two:下载功能 线程 AsyncTask
+
+DownTask.java
+
+```java
+
+public class DownloadTask extends AsyncTask<String, Integer, Integer> 	{
+    private static final int TYPE_SUCCESS = 0;
+    private static final int TYPE_FAILED = 1;
+    private static final int TYPE_PAUSED = 2;
+    private static final int TYPE_CANCELED = 3;
+
+    private DownloadListener downloadListener;
+    private boolean isCancel;
+    private boolean isPause;
+    private int lastProgress;
+
+    public DownloadTask(DownloadListener downloadListener) {
+        this.downloadListener = downloadListener;
+    }
+
+    public void setPause(boolean pause) {
+        isPause = pause;
+    }
+
+    public void setCancel(boolean cancel) {
+        isCancel = cancel;
+    }
+
+    @Override
+    protected Integer doInBackground(String... strings) {
+        InputStream inputStream = null;
+        RandomAccessFile savedFile = null;
+        File file = null;
+        try{
+            // 已下载的文件长度
+            long downloadedLength = 0;
+            String downloadURL = strings[0];
+            String[] subStrings = downloadURL.split("/");
+            String fileName =subStrings[subStrings.length-1];
+            String directory = MyApp.getContext().getApplicationContext().getFilesDir().getAbsolutePath();
+            file = new File(directory+ fileName);
+            Log.d("DS",directory);
+            Log.d("DS",fileName);
+            if (file.exists()){
+                boolean isDeleted = file.delete();
+                downloadedLength = file.length();
+            }
+            long contentLength = getContentLength(downloadURL);
+            if (contentLength == 0){
+                // 下载失败
+                return TYPE_FAILED;
+            }else if(contentLength == downloadedLength){
+                // 下载成功
+                return TYPE_SUCCESS;
+            }
+            // 网络操作
+            OkHttpClient client = new OkHttpClient();
+            Request request = new Request.Builder()
+                    // 支持断点下载
+                    .addHeader("RANGE", "bytes="+ downloadedLength +"-")
+                    .url(downloadURL)
+                    .build();
+            Response response = client.newCall(request).execute();
+            if (response.body() != null) {
+                inputStream = response.body().byteStream();
+                savedFile = new RandomAccessFile(file, "rw");
+                // 跳过已经下载的字节
+                savedFile.seek(downloadedLength);
+                byte[] buf = new byte[1024];
+                int total = 0;
+                int len;
+                // 正在下载
+                while ((len = inputStream.read(buf)) != -1){
+                    if(isCancel)    return TYPE_CANCELED;
+                    else if(isPause)    return TYPE_PAUSED;
+                    else{
+                        total += len;
+                        savedFile.write(buf, 0, len);
+                        // 计算已经下载的百分比
+                        int progress = (int)((total+downloadedLength) * 100 / contentLength);
+                        publishProgress(progress);
+                    }
+                }
+                response.body().close();
+                return TYPE_SUCCESS;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if (inputStream != null) {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (savedFile != null){
+                try {
+                    savedFile.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (isCancel && file != null){
+                boolean delete = file.delete();
+            }
+        }
+        return TYPE_FAILED;
+    }
+
+    private long getContentLength(String downloadURL) throws IOException {
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(downloadURL)
+                .build();
+        Response response = client.newCall(request).execute();
+        if (response.body() != null && response.isSuccessful()){
+            long contentLength = response.body().contentLength();
+            response.body().close();
+            return contentLength;
+        }
+        return 0;
+    }
+    @Override
+    protected void onPostExecute(Integer integer) {
+        switch (integer){
+            case TYPE_SUCCESS:
+                downloadListener.onSuccess();
+                break;
+            case TYPE_FAILED:
+                downloadListener.onFailed();
+                break;
+            case TYPE_PAUSED:
+                downloadListener.onPause();
+                break;
+            case TYPE_CANCELED:
+                downloadListener.onCanceled();
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Override
+    protected void onProgressUpdate(Integer... values) {
+        int progress = values[0];
+        if (progress > lastProgress){
+            downloadListener.onProgress(progress);
+            lastProgress = progress;
+        }
+    }
+
+    @Override
+    protected void onCancelled(Integer integer) {
+        super.onCancelled(integer);
+    }
+}
+
+```
+
+
+
+:three:服务DownloadService
+
+DownloadService.java
+
+```java
+
+public class DownloadService extends Service {
+    private DownloadTask downloadTask;
+    private String downloadURL;
+    private DownloadListener downloadListener = new DownloadListener() {
+        @Override
+        public void onProgress(int progress) {
+            getNotificationManager().notify(1,getNotification("Downloading...", progress));
+        }
+
+        @Override
+        public void onSuccess() {
+            downloadTask = null;
+            stopForeground(true);
+            getNotificationManager().notify(1,getNotification("Download Success", -1));
+            Toast.makeText(DownloadService.this,"Download Success", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onFailed() {
+            downloadTask = null;
+            stopForeground(true);
+            getNotificationManager().notify(1,getNotification("Download Failed", -1));
+            Toast.makeText(DownloadService.this,"Download Failed", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onPause() {
+            downloadTask = null;
+            Toast.makeText(DownloadService.this,"Download Paused", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onCanceled() {
+            downloadTask = null;
+            stopForeground(true);
+            Toast.makeText(DownloadService.this,"Download Canceled", Toast.LENGTH_SHORT).show();
+        }
+    } ;
+    private DownloadBinder mBinder = new DownloadBinder();
+
+    private NotificationManager getNotificationManager(){
+        return (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+    }
+
+    private Notification getNotification(String title, int progress) {
+        Intent intent = new Intent(this, ServiceActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent,0);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"default");
+        builder.setSmallIcon(R.mipmap.ic_launcher_round);
+        builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
+        builder.setContentIntent(pendingIntent);
+        builder.setContentTitle(title);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            builder.setPriority(Notification.PRIORITY_MAX);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+  //修改安卓8.1以上系统报错
+        NotificationChannel notificationChannel = new NotificationChannel("xxx", "xxx",NotificationManager.IMPORTANCE_MIN);
+        notificationChannel.enableLights(false);//如果使用中的设备支持通知灯，则说明此通知通道是否应显示灯
+        notificationChannel.setShowBadge(false);//是否显示角标
+        notificationChannel.setLockscreenVisibility(Notification.VISIBILITY_SECRET);
+        notificationChannel.setImportance(NotificationManager.IMPORTANCE_HIGH);
+        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            if (manager != null) {
+                manager.createNotificationChannel(notificationChannel);
+            }
+            builder.setChannelId("xxx");
+  }
+
+        if (progress >= 0){
+            builder.setContentText(progress + "%");
+            builder.setProgress(100, progress, false);
+        }
+        return builder.build();
+    }
+
+    public DownloadService() {
+    }
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        // TODO: Return the communication channel to the service.
+        return  mBinder;
+    }
+
+    public class DownloadBinder extends Binder {
+        public void startDownload(String url){
+            if (downloadTask == null){
+                downloadURL = url;
+                downloadTask = new DownloadTask(downloadListener);
+                downloadTask.execute(downloadURL);
+                startForeground(1, getNotification("Downloading...", 0));
+                Toast.makeText(DownloadService.this, "Downloading...",Toast.LENGTH_SHORT).show();
+            }
+        }
+        public void pauseDownload(){
+            if (downloadTask != null){
+                downloadTask.setPause(true);
+            }
+        }
+
+        public void cancelDownload(){
+            if (downloadTask != null){
+                downloadTask.setCancel(true);
+            }
+            if (downloadURL != null){
+                // 取消下载是需要删除文件，并关闭通知
+                String fileName = downloadURL.substring(downloadURL.lastIndexOf("/"));
+                String directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
+                File file = new File(directory+fileName);
+                if (file.exists()){
+                    boolean isDeleted = file.delete();
+                }
+                getNotificationManager().cancel(1);
+                stopForeground(true);
+                Toast.makeText(DownloadService.this, "Canceled", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+}
+
+```
+
+
+
+:four:活动控制
 
 ServiceActivity.java
 
 ```java
-...
+
 public class ServiceActivity extends AppCompatActivity {
 
     private Button btn_startDownload;
@@ -725,19 +729,18 @@ public class ServiceActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         unbindService(serviceConnection);
-    }
-}
-
+    }}
 
 ```
 
-5. Manifest.xml
 
-   ```xml
-    <service
-               android:name=".Service.DownloadService"
-               android:enabled="true"
-               android:exported="true"></service>
-   ```
 
-   
+:five:Manifest.xml
+
+```xml
+ <service
+            android:name=".Service.DownloadService"
+            android:enabled="true"
+            android:exported="true"></service>
+```
+
