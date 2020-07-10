@@ -145,7 +145,7 @@ UI控件介绍:`ScrollView`
 ```
 implementation 'com.squareup.okhttp3:okhttp:3.14.1'
 ```
-
+> OkHttp的高性能表现依赖于Okio [Okio](https://github.com/square/okio) `implementation("com.squareup.okio:okio:2.7.0")`
 
 
 1. 实例化客户端`OkHttpClient`
