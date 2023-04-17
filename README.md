@@ -6,7 +6,7 @@
 
 仅供个人学习、研究之用，请勿用于商业用途
 
-[ :point_right: 点此](https://aaronfang123.github.io/Android_Notes/)进入浏览
+[ :point_right: 点此](https://nado-dev.github.io/Android_Notes/)进入浏览
 
 本内容依据“CC BY-SA 4.0”许可证进行授权。要查看该许可证，可访问https://creativecommons.org/licenses/by-sa/4.0/
 
